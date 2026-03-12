@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-brand-bg-light">
       <Navbar />
       <motion.main 
         initial={{ opacity: 0, y: 20 }}

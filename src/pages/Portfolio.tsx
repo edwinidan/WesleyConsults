@@ -57,7 +57,7 @@ export default function Portfolio() {
 
   return (
     <Layout>
-      <div className="bg-gray-900 text-white py-24 relative overflow-hidden">
+      <div className="bg-brand-accent text-[#0A192F] py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h1 
@@ -71,7 +71,7 @@ export default function Portfolio() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-gray-400 max-w-3xl mx-auto"
+            className="text-xl text-brand-text-dark max-w-3xl mx-auto"
           >
             We take pride in delivering exceptional digital experiences. Explore our recent projects.
           </motion.p>

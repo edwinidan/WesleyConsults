@@ -14,16 +14,16 @@ export default function ServiceCard({ title, description, icon, link }: ServiceC
   return (
     <motion.div
       whileHover={{ y: -5 }}
-      className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
+      className="bg-brand-bg-light p-8 rounded-2xl shadow-sm border border-brand-text-dark/10 hover:shadow-md transition-all duration-300"
     >
-      <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-primary mb-6">
+      <div className="w-12 h-12 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent mb-6">
         {icon}
       </div>
-      <h3 className="text-xl font-display font-semibold mb-3 text-gray-900">{title}</h3>
-      <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
+      <h3 className="text-xl font-display font-semibold mb-3 text-brand-text">{title}</h3>
+      <p className="text-brand-text-dark mb-6 leading-relaxed">{description}</p>
       <Link
         to={link}
-        className="inline-flex items-center text-primary font-medium hover:text-red-700 transition-colors group"
+        className="inline-flex items-center text-brand-accent font-medium hover:text-brand-accent-hover transition-colors group"
       >
         Learn more <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
       </Link>

@@ -5,10 +5,10 @@
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Merriweather", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
-  --color-primary: #E53935;
-  /* Red accent */
-  --color-primary-dark: #C62828;
-  /* Red hover */
+  --color-primary: #111827;
+  /* Dark accent */
+  --color-primary-dark: #000000;
+  /* Dark hover */
   --color-secondary: #F3F4F6;
   /* Light gray */
 }
