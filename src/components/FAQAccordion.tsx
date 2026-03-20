@@ -18,19 +18,19 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
         return (
           <div
             key={item.id}
-            className="overflow-hidden rounded-[1.4rem] border border-white/10 bg-white/[0.03]"
+            className="overflow-hidden rounded-[1.4rem] border border-ink/10 bg-white/44"
           >
             <h3>
               <button
                 aria-controls={`${item.id}-panel`}
                 aria-expanded={isOpen}
-                className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-base font-medium text-white transition hover:bg-white/[0.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-mint/70 md:px-6"
+                className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left text-base font-medium text-ink transition hover:bg-surface/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ink/18 md:px-6"
                 onClick={() => setOpenId(isOpen ? '' : item.id)}
                 type="button"
               >
                 <span className="pr-8">{item.question}</span>
                 <ChevronDown
-                  className={`h-5 w-5 shrink-0 text-mint transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                  className={`h-5 w-5 shrink-0 text-ink/70 transition-transform ${isOpen ? 'rotate-180' : ''}`}
                 />
               </button>
             </h3>
@@ -43,7 +43,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
                   initial={{ height: 0, opacity: 0 }}
                   role="region"
                 >
-                  <div className="border-t border-white/10 px-5 pb-5 pt-4 text-sm leading-7 text-mist md:px-6">
+                  <div className="border-t border-ink/10 px-5 pb-5 pt-4 text-sm leading-7 text-muted md:px-6">
                     {item.answer}
                   </div>
                 </motion.div>

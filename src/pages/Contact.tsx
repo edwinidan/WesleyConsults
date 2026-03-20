@@ -16,9 +16,9 @@ export default function Contact() {
               title="Tell us what needs to change, what is not working, and what the site should do better."
             />
             <div className="surface-card space-y-4">
-              <p className="text-sm uppercase tracking-[0.24em] text-mist/70">Typical response</p>
-              <p className="text-3xl font-semibold tracking-[-0.04em] text-white">Within 24 hours</p>
-              <p className="text-sm leading-7 text-mist">
+              <p className="text-sm uppercase tracking-[0.24em] text-muted">Typical response</p>
+              <p className="text-3xl font-semibold tracking-[-0.04em] text-ink">Within 24 hours</p>
+              <p className="text-sm leading-7 text-muted">
                 The most useful first message includes your business type, what the current site is failing to do, your target timeline, and whether the work is repositioning, redesign, or both.
               </p>
             </div>
@@ -34,14 +34,14 @@ export default function Contact() {
 
               <div className="surface-card">
                 <p className="eyebrow mb-3">What to expect</p>
-                <div className="space-y-4 text-sm leading-7 text-mist">
+                <div className="space-y-4 text-sm leading-7 text-muted">
                   <p>We review fit, clarify scope, and recommend the smallest scope that will still move the business forward.</p>
                   <p>If the right answer is a focused refinement rather than a full rebuild, that is the recommendation you should get.</p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-8">
+            <div className="rounded-[2rem] border border-ink/10 bg-white/46 p-6 shadow-[0_24px_70px_rgba(17,17,17,0.08)] md:p-8">
               <form className="space-y-6">
                 <div className="grid gap-5 md:grid-cols-2">
                   <div>
@@ -106,9 +106,9 @@ export default function Contact() {
                 </button>
               </form>
 
-              <div className="mt-6 rounded-[1.4rem] border border-mint/[0.15] bg-mint/[0.08] px-5 py-4 text-sm leading-7 text-mist">
+              <div className="mt-6 rounded-[1.4rem] border border-ink/10 bg-surface/68 px-5 py-4 text-sm leading-7 text-ink/74">
                 Prefer direct contact? Email{' '}
-                <a className="font-medium text-mint" href="mailto:hello@wesleyconsults.com">
+                <a className="font-medium text-ink" href="mailto:hello@wesleyconsults.com">
                   hello@wesleyconsults.com
                 </a>{' '}
                 or start on WhatsApp for a faster first exchange.
@@ -118,20 +118,20 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section-space pt-8">
+      <section className="section-space bg-canvas-alt/72 pt-8">
         <div className="shell-container">
           <div className="grid gap-4 md:grid-cols-3">
             <div className="surface-card">
               <p className="eyebrow mb-3">1. First review</p>
-              <p className="text-sm leading-7 text-mist">We check fit, commercial intent, and whether the current issue is design, messaging, structure, or all three.</p>
+              <p className="text-sm leading-7 text-muted">We check fit, commercial intent, and whether the current issue is design, messaging, structure, or all three.</p>
             </div>
             <div className="surface-card">
               <p className="eyebrow mb-3">2. Scope recommendation</p>
-              <p className="text-sm leading-7 text-mist">You get a clear recommendation on the right project shape, timeline expectation, and what should be prioritised first.</p>
+              <p className="text-sm leading-7 text-muted">You get a clear recommendation on the right project shape, timeline expectation, and what should be prioritised first.</p>
             </div>
             <div className="surface-card">
               <p className="eyebrow mb-3">3. Delivery path</p>
-              <p className="text-sm leading-7 text-mist">If there is a fit, we move into a structured process for strategy, design, build, and launch.</p>
+              <p className="text-sm leading-7 text-muted">If there is a fit, we move into a structured process for strategy, design, build, and launch.</p>
             </div>
           </div>
         </div>

@@ -4,6 +4,9 @@ export interface NavGroupItem {
   href: string;
 }
 
+export type ServiceTone = 'charcoal' | 'taupe' | 'cream';
+export type CaseStudySurfaceStyle = 'ink-feature' | 'taupe-feature' | 'cream-feature';
+
 export interface NavGroup {
   key: string;
   label: string;
@@ -21,7 +24,7 @@ export interface ServiceItem {
   deliverables: string[];
   timeline: string;
   audience: string;
-  accent: string;
+  tone: ServiceTone;
 }
 
 export interface CaseStudy {
@@ -33,7 +36,7 @@ export interface CaseStudy {
   impact: string;
   href: string;
   tags: string[];
-  gradient: string;
+  surfaceStyle: CaseStudySurfaceStyle;
 }
 
 export interface StatMetric {
@@ -138,7 +141,7 @@ export const services: ServiceItem[] = [
     deliverables: ['Messaging direction', 'Custom UI system', 'Responsive front-end build', 'SEO-ready structure', 'Launch support'],
     timeline: '6 to 10 weeks',
     audience: 'Growing firms, consultants, B2B brands, and service-led companies.',
-    accent: '#00FFBA',
+    tone: 'charcoal',
   },
   {
     id: 'ecommerce-platforms',
@@ -151,7 +154,7 @@ export const services: ServiceItem[] = [
     deliverables: ['Storefront design', 'Collection architecture', 'Product page systems', 'Checkout optimisation', 'Analytics setup'],
     timeline: '8 to 12 weeks',
     audience: 'Ambitious consumer brands and retailers modernising digital commerce.',
-    accent: '#81FFE1',
+    tone: 'taupe',
   },
   {
     id: 'portfolio-brand-experiences',
@@ -164,7 +167,7 @@ export const services: ServiceItem[] = [
     deliverables: ['Narrative structure', 'Case-study templates', 'Motion direction', 'Art-directed page layouts', 'Content guidance'],
     timeline: '5 to 9 weeks',
     audience: 'Agencies, creators, studios, property brands, and founder-led ventures.',
-    accent: '#66F0FF',
+    tone: 'cream',
   },
   {
     id: 'ai-advisory',
@@ -177,7 +180,7 @@ export const services: ServiceItem[] = [
     deliverables: ['Use-case workshop', 'Opportunity mapping', 'Implementation brief', 'Vendor and tooling guidance', 'Pilot recommendations'],
     timeline: '3 to 6 weeks',
     audience: 'Leaders exploring AI with a bias toward useful, controlled deployment.',
-    accent: '#9BF4FF',
+    tone: 'charcoal',
   },
 ];
 
@@ -214,7 +217,7 @@ export const caseStudies: CaseStudy[] = [
     impact: '42% lift in qualified contact enquiries within the first quarter.',
     href: '/work',
     tags: ['Strategy', 'UX/UI', 'Development'],
-    gradient: 'linear-gradient(135deg, rgba(0,255,186,0.28), rgba(17,48,61,0.25) 42%, rgba(10,16,26,0.95))',
+    surfaceStyle: 'ink-feature',
   },
   {
     id: 'verity',
@@ -225,7 +228,7 @@ export const caseStudies: CaseStudy[] = [
     impact: '31% increase in demo requests from decision-makers.',
     href: '/work',
     tags: ['Brand Refresh', 'Content Systems', 'Front-end'],
-    gradient: 'linear-gradient(145deg, rgba(129,255,225,0.24), rgba(13,33,49,0.92) 50%, rgba(33,61,88,0.72))',
+    surfaceStyle: 'cream-feature',
   },
   {
     id: 'atlas',
@@ -236,7 +239,7 @@ export const caseStudies: CaseStudy[] = [
     impact: '18% increase in average order value after launch.',
     href: '/work',
     tags: ['Commerce UX', 'Product Pages', 'Optimisation'],
-    gradient: 'linear-gradient(135deg, rgba(102,240,255,0.3), rgba(9,20,34,0.92) 54%, rgba(0,255,186,0.12))',
+    surfaceStyle: 'taupe-feature',
   },
   {
     id: 'riverbank',
@@ -247,7 +250,7 @@ export const caseStudies: CaseStudy[] = [
     impact: '2.6x growth in time spent on strategic service pages.',
     href: '/work',
     tags: ['Messaging', 'Design System', 'Launch'],
-    gradient: 'linear-gradient(140deg, rgba(155,244,255,0.22), rgba(13,33,49,0.95) 48%, rgba(34,78,110,0.7))',
+    surfaceStyle: 'ink-feature',
   },
   {
     id: 'forma',
@@ -258,7 +261,7 @@ export const caseStudies: CaseStudy[] = [
     impact: '67% increase in direct enquiry rate from target-fit prospects.',
     href: '/work',
     tags: ['Portfolio Strategy', 'Motion', 'Responsive Build'],
-    gradient: 'linear-gradient(120deg, rgba(0,255,186,0.18), rgba(9,20,34,0.94) 40%, rgba(102,240,255,0.24))',
+    surfaceStyle: 'cream-feature',
   },
   {
     id: 'signalstack',
@@ -269,7 +272,7 @@ export const caseStudies: CaseStudy[] = [
     impact: '26% increase in product-qualified pipeline sourced from the website.',
     href: '/work',
     tags: ['SaaS', 'Storytelling', 'Performance'],
-    gradient: 'linear-gradient(150deg, rgba(129,255,225,0.18), rgba(7,14,24,0.95) 45%, rgba(0,255,186,0.2))',
+    surfaceStyle: 'taupe-feature',
   },
 ];
 

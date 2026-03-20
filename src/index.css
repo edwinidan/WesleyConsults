@@ -5,18 +5,20 @@
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 
-  --color-night: #11303d;
-  --color-night-soft: #0b1f29;
-  --color-panel: #122a36;
-  --color-panel-strong: #0a1720;
-  --color-mint: #00ffba;
-  --color-mist: #9fb6c0;
-  --color-ice: #fafafa;
+  --color-canvas: #f5f1e8;
+  --color-canvas-alt: #efe9dd;
+  --color-surface: #d8cfc2;
+  --color-ink: #111111;
+  --color-ink-soft: #1a1a1a;
+  --color-muted: #8c8c8c;
+  --color-white: #ffffff;
+  --color-border: rgba(17, 17, 17, 0.1);
+  --color-border-strong: rgba(17, 17, 17, 0.18);
 }
 
 :root {
-  color-scheme: dark;
-  background: var(--color-night);
+  color-scheme: light;
+  background: var(--color-canvas);
 }
 
 html {
@@ -27,10 +29,10 @@ body {
   min-height: 100vh;
   font-family: var(--font-sans);
   background:
-    radial-gradient(circle at top right, rgba(0, 255, 186, 0.12), transparent 26%),
-    radial-gradient(circle at 20% 25%, rgba(102, 240, 255, 0.08), transparent 24%),
-    linear-gradient(180deg, #11303d 0%, #0d2330 46%, #09131c 100%);
-  color: var(--color-ice);
+    radial-gradient(circle at top right, rgba(216, 207, 194, 0.48), transparent 24%),
+    radial-gradient(circle at 12% 18%, rgba(17, 17, 17, 0.045), transparent 22%),
+    linear-gradient(180deg, #f5f1e8 0%, #f1eadf 54%, #efe9dd 100%);
+  color: var(--color-ink);
   @apply antialiased;
 }
 
@@ -40,17 +42,17 @@ body::before {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(rgba(17, 17, 17, 0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.024) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at center, black, transparent 88%);
-  opacity: 0.45;
+  opacity: 0.38;
   z-index: -1;
 }
 
 ::selection {
-  background: rgba(0, 255, 186, 0.24);
-  color: var(--color-ice);
+  background: rgba(216, 207, 194, 0.95);
+  color: var(--color-ink);
 }
 
 a,
@@ -98,34 +100,43 @@ h6 {
 }
 
 .surface-card {
-  @apply rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm md:p-7;
-  box-shadow: 0 22px 80px rgba(0, 0, 0, 0.22);
+  @apply rounded-[1.6rem] border border-ink/10 bg-[rgba(255,255,255,0.44)] p-6 md:p-7;
+  box-shadow: 0 22px 60px rgba(17, 17, 17, 0.08);
 }
 
 .eyebrow {
-  @apply text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-mint;
+  @apply text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-ink/66;
 }
 
 .button-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-mint px-6 py-3.5 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-[#6effd6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/80;
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-canvas transition duration-300 hover:-translate-y-0.5 hover:bg-ink-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/35;
+  box-shadow: 0 16px 34px rgba(17, 17, 17, 0.15);
 }
 
 .button-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.04] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-mint/40 hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/80;
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/12 bg-surface/75 px-6 py-3.5 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-ink/20 hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/22;
+}
+
+.button-primary-inverse {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-canvas px-6 py-3.5 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30;
+}
+
+.button-secondary-inverse {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/16 bg-white/6 px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-white/28 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/26;
 }
 
 .ambient-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(rgba(17, 17, 17, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.05) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 90%);
 }
 
 .form-input {
-  @apply w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white outline-none transition focus:border-mint/50 focus:bg-white/[0.06] focus:ring-2 focus:ring-mint/40;
+  @apply w-full rounded-2xl border border-ink/10 bg-white/65 px-4 py-3.5 text-sm text-ink outline-none transition placeholder:text-muted/80 focus:border-ink/22 focus:bg-white focus:ring-2 focus:ring-ink/15;
 }
 
 .form-label {
-  @apply mb-2 block text-sm font-medium text-white/78;
+  @apply mb-2 block text-sm font-medium text-ink/74;
 }

@@ -37,7 +37,7 @@ export default function Home() {
               </motion.span>
               <motion.h1
                 animate={{ opacity: 1, y: 0 }}
-                className="max-w-4xl text-6xl font-semibold tracking-[-0.07em] text-white sm:text-7xl lg:text-[5.6rem]"
+                className="max-w-4xl text-6xl font-semibold tracking-[-0.07em] text-ink sm:text-7xl lg:text-[5.6rem]"
                 initial={{ opacity: 0, y: 18 }}
                 transition={{ delay: 0.05, duration: 0.5 }}
               >
@@ -45,7 +45,7 @@ export default function Home() {
               </motion.h1>
               <motion.p
                 animate={{ opacity: 1, y: 0 }}
-                className="max-w-2xl text-base leading-8 text-mist md:text-xl"
+                className="max-w-2xl text-base leading-8 text-muted md:text-xl"
                 initial={{ opacity: 0, y: 18 }}
                 transition={{ delay: 0.12, duration: 0.5 }}
               >
@@ -66,17 +66,17 @@ export default function Home() {
               </motion.div>
               <motion.div
                 animate={{ opacity: 1 }}
-                className="grid max-w-2xl gap-4 pt-2 text-sm text-white/78 sm:grid-cols-3"
+                className="grid max-w-2xl gap-4 pt-2 text-sm text-ink/78 sm:grid-cols-3"
                 initial={{ opacity: 0 }}
                 transition={{ delay: 0.28, duration: 0.5 }}
               >
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+                <div className="rounded-2xl border border-ink/10 bg-white/48 px-4 py-4">
                   Premium website strategy and build
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+                <div className="rounded-2xl border border-ink/10 bg-white/48 px-4 py-4">
                   E-commerce and showcase experiences
                 </div>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4">
+                <div className="rounded-2xl border border-ink/10 bg-white/48 px-4 py-4">
                   AI advisory for practical adoption
                 </div>
               </motion.div>
@@ -85,22 +85,22 @@ export default function Home() {
             <div className="relative min-h-[28rem]">
               <AmbientHeroMedia posterSrc="/hero-illustration.png" />
               <div className="relative flex h-full flex-col justify-end gap-6 px-6 py-8 md:px-10 md:py-10">
-                <div className="ml-auto max-w-sm rounded-[1.6rem] border border-white/10 bg-night-soft/[0.7] p-5 backdrop-blur-sm">
+                <div className="ml-auto max-w-sm rounded-[1.6rem] border border-ink/10 bg-white/72 p-5 shadow-[0_18px_44px_rgba(17,17,17,0.08)]">
                   <p className="eyebrow mb-3">Current focus</p>
-                  <p className="text-xl font-medium text-white">
+                  <p className="text-xl font-medium text-ink">
                     Premium redesigns for businesses that have outgrown generic websites.
                   </p>
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
-                    <p className="text-sm uppercase tracking-[0.24em] text-mist/75">Approach</p>
-                    <p className="mt-3 text-sm leading-6 text-white/80">
+                  <div className="rounded-[1.5rem] border border-ink/10 bg-surface/56 p-5">
+                    <p className="text-sm uppercase tracking-[0.24em] text-muted">Approach</p>
+                    <p className="mt-3 text-sm leading-6 text-ink/78">
                       Positioning first. Interface second. Performance throughout.
                     </p>
                   </div>
-                  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
-                    <p className="text-sm uppercase tracking-[0.24em] text-mist/75">Delivery</p>
-                    <p className="mt-3 text-sm leading-6 text-white/80">
+                  <div className="rounded-[1.5rem] border border-ink/10 bg-canvas-alt/82 p-5">
+                    <p className="text-sm uppercase tracking-[0.24em] text-muted">Delivery</p>
+                    <p className="mt-3 text-sm leading-6 text-ink/78">
                       Structured sprints, sharper reviews, and a cleaner path to launch.
                     </p>
                   </div>
@@ -137,15 +137,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-space pt-10">
+      <section className="section-space bg-ink pt-10">
         <div className="shell-container">
           <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeading
-              description="Placeholder case studies shaped to match the new tone. Each project emphasises stronger narrative control, credibility, and measurable lift."
-              eyebrow="Selected Work"
-              title="Digital work designed to earn trust faster and convert with less friction."
-            />
-            <Link className="button-secondary" to="/work">
+            <div className="[&_h2]:text-canvas [&_.eyebrow]:text-canvas/64 [&_p]:text-canvas/70">
+              <SectionHeading
+                description="Placeholder case studies shaped to match the new tone. Each project emphasises stronger narrative control, credibility, and measurable lift."
+                eyebrow="Selected Work"
+                title="Digital work designed to earn trust faster and convert with less friction."
+              />
+            </div>
+            <Link className="button-secondary-inverse" to="/work">
               See More Work <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -163,7 +165,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-space">
+      <section className="section-space bg-canvas-alt/72">
         <div className="shell-container">
           <SectionHeading
             align="center"
@@ -200,7 +202,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-space pt-8">
+      <section className="section-space bg-canvas-alt/72 pt-8">
         <div className="shell-container">
           <div className="grid gap-10 lg:grid-cols-[0.78fr_1fr]">
             <SectionHeading

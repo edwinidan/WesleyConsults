@@ -19,7 +19,7 @@ export default function Portfolio() {
               title="Selected digital work for brands that needed more authority online."
             />
             <div className="flex flex-col gap-4 lg:items-end">
-              <p className="max-w-xl text-sm leading-7 text-mist">
+              <p className="max-w-xl text-sm leading-7 text-muted">
                 These are placeholder case studies for the redesign. The layout and storytelling pattern are ready to accept real projects, results, and proof points when available.
               </p>
               <Link className="button-secondary" to="/contact">
@@ -36,7 +36,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="section-space pt-10">
+      <section className="section-space bg-canvas-alt/72 pt-10">
         <div className="shell-container">
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {caseStudies.map((study) => (
@@ -48,7 +48,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="section-space pt-10">
+      <section className="section-space bg-canvas-alt/72 pt-10">
         <div className="shell-container">
           <SectionHeading
             align="center"

@@ -86,16 +86,16 @@ export default function MetricsStrip({ metrics }: MetricsStripProps) {
     >
       {metrics.map((metric) => {
         const content = (
-          <div className="surface-card h-full min-h-56 space-y-5">
-            <div className="text-4xl font-semibold tracking-[-0.05em] text-white md:text-5xl">
+          <div className="surface-card h-full min-h-56 space-y-5 transition duration-300 group-hover:-translate-y-1 group-hover:border-ink/18 group-hover:bg-white/60">
+            <div className="text-4xl font-semibold tracking-[-0.05em] text-ink md:text-5xl">
               <CountUpValue active={active} metric={metric} />
             </div>
             <div className="space-y-3">
-              <h3 className="text-lg font-medium text-white">{metric.label}</h3>
-              <p className="text-sm leading-6 text-mist">{metric.detail}</p>
+              <h3 className="text-lg font-medium text-ink">{metric.label}</h3>
+              <p className="text-sm leading-6 text-muted">{metric.detail}</p>
             </div>
             {metric.href ? (
-              <span className="inline-flex items-center gap-2 text-sm font-medium text-mint">
+              <span className="inline-flex items-center gap-2 text-sm font-medium text-ink">
                 View related work <ArrowUpRight className="h-4 w-4" />
               </span>
             ) : null}
@@ -103,7 +103,7 @@ export default function MetricsStrip({ metrics }: MetricsStripProps) {
         );
 
         return metric.href ? (
-          <Link key={metric.id} className="group" to={metric.href}>
+          <Link key={metric.id} className="group block" to={metric.href}>
             {content}
           </Link>
         ) : (

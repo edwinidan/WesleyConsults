@@ -17,7 +17,7 @@ export default function Insights() {
         </div>
       </section>
 
-      <section className="section-space pt-8">
+      <section className="section-space bg-canvas-alt/72 pt-8">
         <div className="shell-container">
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {insights.map((article) => (

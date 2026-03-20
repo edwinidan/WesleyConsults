@@ -25,23 +25,23 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${scrolled ? 'bg-night/[0.78] backdrop-blur-xl' : 'bg-transparent'}`}
+      className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${scrolled ? 'bg-canvas/78 backdrop-blur-xl' : 'bg-transparent'}`}
     >
       <div className="shell-container">
         <nav
           aria-label="Main navigation"
-          className={`mt-4 rounded-full border px-4 transition duration-300 md:px-6 ${scrolled ? 'border-white/10 bg-night-soft/[0.8] shadow-[0_18px_60px_rgba(0,0,0,0.28)]' : 'border-white/10 bg-white/[0.03]'}`}
+          className={`mt-4 rounded-full border px-4 transition duration-300 md:px-6 ${scrolled ? 'border-ink/10 bg-white/78 shadow-[0_18px_60px_rgba(17,17,17,0.1)]' : 'border-ink/10 bg-white/34 shadow-[0_10px_34px_rgba(17,17,17,0.06)]'}`}
         >
           <div className="flex min-h-16 items-center justify-between gap-6">
             <Link className="flex items-center gap-3" to="/">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-mint/[0.3] bg-mint/[0.1] text-sm font-semibold tracking-[0.16em] text-mint">
+              <span className={`flex h-10 w-10 items-center justify-center rounded-full border text-sm font-semibold tracking-[0.16em] transition duration-300 ${scrolled ? 'border-ink/12 bg-ink text-canvas' : 'border-ink/12 bg-canvas text-ink'}`}>
                 WC
               </span>
               <div className="leading-tight">
-                <span className="block text-sm font-semibold uppercase tracking-[0.28em] text-white">
+                <span className="block text-sm font-semibold uppercase tracking-[0.28em] text-ink">
                   Wesley Consults
                 </span>
-                <span className="hidden text-xs text-mist md:block">
+                <span className="hidden text-xs text-muted md:block">
                   Strategic websites and digital experiences
                 </span>
               </div>
@@ -63,36 +63,36 @@ export default function Navbar() {
                 >
                   <button
                     aria-expanded={openGroup === group.key}
-                    className="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-white/80 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/70"
+                    className="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-ink/72 transition hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/18"
                     onClick={() => setOpenGroup((value) => (value === group.key ? null : group.key))}
                     onFocus={() => setOpenGroup(group.key)}
                     type="button"
                   >
                     {group.label}
-                    <ChevronDown className={`h-4 w-4 transition ${openGroup === group.key ? 'rotate-180 text-mint' : ''}`} />
+                    <ChevronDown className={`h-4 w-4 transition ${openGroup === group.key ? 'rotate-180 text-ink' : 'text-muted'}`} />
                   </button>
 
                   <AnimatePresence>
                     {openGroup === group.key ? (
                       <motion.div
                         animate={{ opacity: 1, y: 0 }}
-                        className="absolute left-0 top-full mt-4 w-[24rem] rounded-[1.8rem] border border-white/10 bg-night-soft/95 p-5 shadow-[0_24px_90px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+                        className="absolute left-0 top-full mt-4 w-[24rem] rounded-[1.8rem] border border-ink/10 bg-canvas p-5 shadow-[0_24px_90px_rgba(17,17,17,0.12)]"
                         exit={{ opacity: 0, y: 8 }}
                         initial={{ opacity: 0, y: 8 }}
                       >
-                        <div className="mb-4 space-y-2 border-b border-white/10 pb-4">
+                        <div className="mb-4 space-y-2 border-b border-ink/10 pb-4">
                           <p className="eyebrow">{group.label}</p>
-                          <p className="text-sm leading-6 text-mist">{group.description}</p>
+                          <p className="text-sm leading-6 text-muted">{group.description}</p>
                         </div>
                         <div className="space-y-2">
                           {group.items.map((item) => (
                             <Link
-                              className="block rounded-2xl border border-transparent px-4 py-3 transition hover:border-mint/30 hover:bg-white/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/70"
+                              className="block rounded-2xl border border-transparent px-4 py-3 transition hover:border-ink/10 hover:bg-canvas-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/18"
                               key={item.href}
                               to={item.href}
                             >
-                              <span className="block text-sm font-medium text-white">{item.label}</span>
-                              <span className="mt-1 block text-sm leading-6 text-mist">{item.description}</span>
+                              <span className="block text-sm font-medium text-ink">{item.label}</span>
+                              <span className="mt-1 block text-sm leading-6 text-muted">{item.description}</span>
                             </Link>
                           ))}
                         </div>
@@ -107,7 +107,7 @@ export default function Navbar() {
 
                 return (
                   <Link
-                    className={`rounded-full px-4 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/70 ${active ? 'text-white' : 'text-white/80 hover:text-white'}`}
+                    className={`rounded-full px-4 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/18 ${active ? 'text-ink' : 'text-ink/72 hover:text-ink'}`}
                     key={link.href}
                     to={link.href}
                   >
@@ -125,7 +125,7 @@ export default function Navbar() {
 
             <button
               aria-expanded={isOpen}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.04] text-white lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink/10 bg-white/52 text-ink lg:hidden"
               onClick={() => setIsOpen((value) => !value)}
               type="button"
             >
@@ -143,11 +143,11 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -10 }}
             initial={{ opacity: 0, y: -10 }}
           >
-            <div className="mt-3 rounded-[2rem] border border-white/10 bg-night-soft/95 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl">
+            <div className="mt-3 rounded-[2rem] border border-ink/12 bg-[linear-gradient(145deg,rgba(17,17,17,0.98),rgba(26,26,26,0.95)_54%,rgba(216,207,194,0.14))] p-5 shadow-[0_20px_80px_rgba(17,17,17,0.18)]">
               <div className="space-y-2 border-b border-white/10 pb-4">
                 {navLinks.map((link) => (
                   <Link
-                    className="block rounded-2xl px-4 py-3 text-base font-medium text-white transition hover:bg-white/[0.05]"
+                    className="block rounded-2xl px-4 py-3 text-base font-medium text-canvas transition hover:bg-white/6"
                     key={link.href}
                     to={link.href}
                   >
@@ -161,15 +161,15 @@ export default function Navbar() {
                   const isExpanded = mobileGroup === group.key;
 
                   return (
-                    <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.03]" key={group.key}>
+                    <div className="rounded-[1.5rem] border border-white/10 bg-white/6" key={group.key}>
                       <button
                         aria-expanded={isExpanded}
-                        className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left text-sm font-medium text-white"
+                        className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left text-sm font-medium text-canvas"
                         onClick={() => setMobileGroup((value) => (value === group.key ? null : group.key))}
                         type="button"
                       >
                         {group.label}
-                        <ChevronDown className={`h-4 w-4 text-mint transition ${isExpanded ? 'rotate-180' : ''}`} />
+                        <ChevronDown className={`h-4 w-4 text-canvas/68 transition ${isExpanded ? 'rotate-180' : ''}`} />
                       </button>
 
                       <AnimatePresence initial={false}>
@@ -183,11 +183,11 @@ export default function Navbar() {
                             <div className="space-y-2 border-t border-white/10 px-4 py-4">
                               {group.items.map((item) => (
                                 <Link
-                                  className="block rounded-2xl bg-night/[0.5] px-4 py-3 text-sm text-mist transition hover:bg-white/[0.05] hover:text-white"
+                                  className="block rounded-2xl bg-white/8 px-4 py-3 text-sm text-canvas/70 transition hover:bg-white/12 hover:text-canvas"
                                   key={item.href}
                                   to={item.href}
                                 >
-                                  <span className="mb-1 block font-medium text-white">{item.label}</span>
+                                  <span className="mb-1 block font-medium text-canvas">{item.label}</span>
                                   <span className="block leading-6">{item.description}</span>
                                 </Link>
                               ))}
@@ -200,7 +200,7 @@ export default function Navbar() {
                 })}
               </div>
 
-              <Link className="button-primary mt-5 flex w-full" to="/contact">
+              <Link className="button-primary-inverse mt-5 flex w-full" to="/contact">
                 Start a Project
               </Link>
             </div>
