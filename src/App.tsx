@@ -10,13 +10,24 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Insights from './pages/Insights';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useLayoutEffect(() => {
+    if (hash) {
+      window.requestAnimationFrame(() => {
+        const element = document.getElementById(hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ block: 'start' });
+        }
+      });
+      return;
+    }
+
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [hash, pathname]);
 
   return null;
 }
@@ -29,7 +40,9 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/work" element={<Portfolio />} />
         <Route path="/about" element={<About />} />
+        <Route path="/insights" element={<Insights />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>

@@ -1,38 +1,32 @@
-import { motion } from 'motion/react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 
 export default function CTASection() {
   return (
-    <section className="py-20 bg-brand-bg">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-text mb-6">
-            Ready to elevate your digital presence?
-          </h2>
-          <p className="text-xl text-brand-text-dark mb-10 max-w-2xl mx-auto">
-            Let's build something amazing together. Whether you need a new website or a complete digital transformation, we're here to help.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full text-brand-text bg-brand-accent hover:bg-brand-accent-hover transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            >
-              Start a Project
-            </Link>
-            <Link
-              to="/portfolio"
-              className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full text-gray-700 bg-brand-bg-light border border-brand-text-dark/20 hover:bg-brand-bg-light/70 transition-colors shadow-sm hover:shadow-md"
-            >
-              View Our Work <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+    <section className="section-space">
+      <div className="shell-container">
+        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(0,255,186,0.12),rgba(10,23,32,0.9)_36%,rgba(9,19,28,0.96))] p-8 shadow-[0_24px_90px_rgba(0,0,0,0.25)] md:p-12">
+          <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
+            <div className="space-y-5">
+              <span className="eyebrow">Start a project</span>
+              <h2 className="max-w-2xl text-4xl font-semibold tracking-[-0.05em] text-white md:text-5xl">
+                If the site no longer reflects the quality of the business, it is time to rebuild the signal.
+              </h2>
+              <p className="max-w-2xl text-base leading-7 text-mist md:text-lg">
+                Wesley Consults helps ambitious teams tighten the story, redesign the experience, and launch websites that feel more credible from the first screen.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4 lg:items-end">
+              <Link className="button-primary w-full sm:w-auto" to="/contact">
+                Discuss your project <ArrowUpRight className="h-4 w-4" />
+              </Link>
+              <Link className="button-secondary w-full sm:w-auto" to="/work">
+                Explore the work <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

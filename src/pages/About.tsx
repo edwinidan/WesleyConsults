@@ -1,98 +1,110 @@
-import Layout from '../components/Layout';
 import CTASection from '../components/CTASection';
-import { motion } from 'motion/react';
-import { Target, Users, Lightbulb, ShieldCheck } from 'lucide-react';
+import Layout from '../components/Layout';
+import SectionHeading from '../components/SectionHeading';
+import { aboutPrinciples, processSteps, sectors } from '../content/siteContent';
 
 export default function About() {
   return (
     <Layout>
-      <div className="bg-brand-bg-light py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-brand-accent font-bold tracking-wider uppercase text-sm mb-2 block">About Us</span>
-              <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-text mb-6 leading-tight">
-                We are Wesley Consults. <br />
-                <span className="text-brand-text-dark">Builders of the digital future.</span>
-              </h1>
-              <p className="text-lg text-brand-text-dark mb-6 leading-relaxed">
-                Founded with a vision to bridge the gap between complex technology and business needs, Wesley Consults is a modern technology agency dedicated to crafting superior digital experiences.
+      <section className="section-space pb-14 pt-10 md:pt-14">
+        <div className="shell-container">
+          <div className="grid gap-8 lg:grid-cols-[0.82fr_1fr] lg:items-end">
+            <SectionHeading
+              description="Wesley Consults exists to help businesses present themselves with more clarity, more authority, and more commercial control online."
+              eyebrow="About"
+              title="A digital studio mindset with a practical, business-first delivery model."
+            />
+            <div className="surface-card space-y-4">
+              <p className="text-base leading-8 text-mist">
+                The work sits at the intersection of positioning, premium interface design, and front-end execution. The priority is not decoration. It is building a digital presence that helps good businesses feel as strong online as they are in the room.
               </p>
-              <p className="text-lg text-brand-text-dark mb-8 leading-relaxed">
-                We believe that every business deserves a world-class digital presence. Whether it's a high-performance website or a future-ready AI solution, we bring technical expertise and creative innovation to every project.
+              <p className="text-base leading-8 text-mist">
+                That means clearer hierarchy, more disciplined content structure, sharper user journeys, and a stronger relationship between the visual system and the offer itself.
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="absolute -inset-4 bg-gray-200 rounded-3xl transform rotate-2"></div>
-              <img
-                src="https://picsum.photos/seed/teamwork/800/600"
-                alt="Team working together"
-                className="relative rounded-2xl shadow-xl w-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="bg-brand-bg py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-display font-bold text-brand-text mb-4">Our Core Values</h2>
-            <p className="text-brand-text-dark max-w-2xl mx-auto">
-              The principles that guide our work and relationships.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: <Target className="w-8 h-8 text-brand-accent" />, title: 'Excellence', desc: 'We never settle for "good enough". We aim for perfection in every pixel and line of code.' },
-              { icon: <Users className="w-8 h-8 text-brand-accent" />, title: 'Collaboration', desc: 'We work with you, not just for you. Your success is our success.' },
-              { icon: <Lightbulb className="w-8 h-8 text-brand-accent" />, title: 'Innovation', desc: 'We stay ahead of the curve, embracing new technologies like AI to give you an edge.' },
-              { icon: <ShieldCheck className="w-8 h-8 text-brand-accent" />, title: 'Integrity', desc: 'Transparent communication and honest advice. We build trust through action.' }
-            ].map((value, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5 }}
-                className="bg-brand-bg-light p-8 rounded-2xl shadow-sm border border-brand-text-dark/10 text-center"
-              >
-                <div className="bg-brand-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-accent">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-bold text-brand-text mb-3">{value.title}</h3>
-                <p className="text-brand-text-dark text-sm leading-relaxed">{value.desc}</p>
-              </motion.div>
+      <section className="section-space pt-8">
+        <div className="shell-container">
+          <SectionHeading
+            description="The principles shaping the work across strategy, design, build, and emerging AI advisory."
+            eyebrow="Principles"
+            title="A few rules that keep the output sharp."
+          />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {aboutPrinciples.map((principle) => (
+              <div className="surface-card" key={principle.title}>
+                <h3 className="text-2xl font-semibold text-white">{principle.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-mist">{principle.description}</p>
+              </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="py-20 bg-brand-bg-light">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-display font-bold text-brand-text mb-8">Our Vision for AI</h2>
-          <p className="text-xl text-brand-text-dark leading-relaxed mb-10">
-            "We see a future where Artificial Intelligence isn't just a buzzword, but a practical tool that empowers businesses to operate smarter and faster. Wesley Consults is positioning itself at the forefront of this revolution, preparing to offer bespoke AI implementation strategies that respect privacy while maximizing efficiency."
-          </p>
-          <div className="flex items-center justify-center space-x-4">
-            <div className="w-12 h-12 bg-brand-bg-light rounded-full overflow-hidden">
-              <img src="https://picsum.photos/seed/founder/100/100" alt="Founder" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-            </div>
-            <div className="text-left">
-              <div className="font-bold text-brand-text">Wesley Founder</div>
-              <div className="text-sm text-brand-accent">CEO & Lead Architect</div>
+      <section className="section-space pt-10">
+        <div className="shell-container">
+          <SectionHeading
+            description="Grouped sectors for the enhanced navigation and for the eventual case-study filtering layer."
+            eyebrow="Sectors"
+            title="Industries where credibility and digital clarity have direct commercial weight."
+          />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {sectors.map((sector) => (
+              <div className="surface-card" id={sector.id} key={sector.id}>
+                <p className="eyebrow mb-3">Sector</p>
+                <h3 className="text-2xl font-semibold text-white">{sector.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-mist">{sector.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space pt-10">
+        <div className="shell-container">
+          <div className="grid gap-10 lg:grid-cols-[0.82fr_1fr]">
+            <SectionHeading
+              description="The collaboration model is structured enough to keep momentum high, but flexible enough to work with busy internal teams."
+              eyebrow="How We Work"
+              title="A simple operating model that keeps the project moving."
+            />
+            <div className="space-y-4">
+              {processSteps.map((step, index) => (
+                <div className="surface-card flex gap-5" key={step.title}>
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-mint/[0.3] bg-mint/[0.1] text-sm font-semibold text-mint">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-mist">{step.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="section-space pt-6">
+        <div className="shell-container">
+          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(135deg,rgba(0,255,186,0.08),rgba(10,23,32,0.92)_35%,rgba(9,19,28,0.98))] p-8 md:p-12">
+            <div className="grid gap-8 lg:grid-cols-[0.72fr_1fr] lg:items-end">
+              <div className="space-y-3">
+                <span className="eyebrow">Leadership Note</span>
+                <h2 className="text-4xl font-semibold tracking-[-0.05em] text-white md:text-5xl">
+                  The goal is simple: build digital experiences that make good businesses feel harder to ignore.
+                </h2>
+              </div>
+              <p className="text-base leading-8 text-mist md:text-lg">
+                Wesley Consults is positioning itself as a sharper digital partner for modern businesses, with an eventual AI advisory layer built around useful implementation rather than trend-chasing. The immediate focus remains premium websites, e-commerce, and showcase experiences that create measurable leverage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <CTASection />
     </Layout>

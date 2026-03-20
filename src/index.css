@@ -1,21 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Merriweather", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 
-  --color-primary: #111827;
-  /* Dark accent */
-  --color-primary-dark: #000000;
-  /* Dark hover */
-  --color-secondary: #F3F4F6;
-  /* Light gray */
+  --color-night: #11303d;
+  --color-night-soft: #0b1f29;
+  --color-panel: #122a36;
+  --color-panel-strong: #0a1720;
+  --color-mint: #00ffba;
+  --color-mist: #9fb6c0;
+  --color-ice: #fafafa;
+}
+
+:root {
+  color-scheme: dark;
+  background: var(--color-night);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
   font-family: var(--font-sans);
-  @apply text-gray-800 antialiased text-[17px] leading-relaxed;
+  background:
+    radial-gradient(circle at top right, rgba(0, 255, 186, 0.12), transparent 26%),
+    radial-gradient(circle at 20% 25%, rgba(102, 240, 255, 0.08), transparent 24%),
+    linear-gradient(180deg, #11303d 0%, #0d2330 46%, #09131c 100%);
+  color: var(--color-ice);
+  @apply antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black, transparent 88%);
+  opacity: 0.45;
+  z-index: -1;
+}
+
+::selection {
+  background: rgba(0, 255, 186, 0.24);
+  color: var(--color-ice);
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
 }
 
 h1,
@@ -25,4 +68,64 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.site-shell {
+  @apply relative overflow-hidden;
+}
+
+.section-space {
+  @apply py-20 md:py-28;
+}
+
+.shell-container {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.surface-card {
+  @apply rounded-[1.6rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm md:p-7;
+  box-shadow: 0 22px 80px rgba(0, 0, 0, 0.22);
+}
+
+.eyebrow {
+  @apply text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-mint;
+}
+
+.button-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-mint px-6 py-3.5 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-0.5 hover:bg-[#6effd6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/80;
+}
+
+.button-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.04] px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-mint/40 hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/80;
+}
+
+.ambient-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 90%);
+}
+
+.form-input {
+  @apply w-full rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white outline-none transition focus:border-mint/50 focus:bg-white/[0.06] focus:ring-2 focus:ring-mint/40;
+}
+
+.form-label {
+  @apply mb-2 block text-sm font-medium text-white/78;
 }

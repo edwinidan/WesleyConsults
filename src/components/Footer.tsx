@@ -1,90 +1,103 @@
+import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Twitter, Linkedin, Instagram, Mail, ArrowRight } from 'lucide-react';
+import {
+  contactMethods,
+  footerSecondaryLinks,
+  sectors,
+  services,
+} from '../content/siteContent';
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-accent text-[#0A192F] pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div className="col-span-1 md:col-span-1">
-            <Link to="/" className="inline-block mb-6">
-              <span className="font-display font-bold text-2xl text-brand-text tracking-tight">
-                Wesley<span className="text-gray-500">Consults</span>
-              </span>
-            </Link>
-            <p className="text-brand-text-dark mb-6 leading-relaxed">
-              Building professional digital experiences for ambitious businesses. We combine modern design with cutting-edge technology.
+    <footer className="border-t border-white/10 bg-panel-strong/[0.8] pb-8 pt-16">
+      <div className="shell-container">
+        <div className="mb-14 grid gap-10 xl:grid-cols-[1.4fr_repeat(3,minmax(0,1fr))]">
+          <div className="space-y-6">
+            <span className="eyebrow">Wesley Consults</span>
+            <h2 className="max-w-md text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">
+              Premium websites and digital experiences for teams that need sharper momentum.
+            </h2>
+            <p className="max-w-lg text-sm leading-7 text-mist">
+              Strategy-led design and front-end execution for businesses that want their digital presence to feel clearer, faster, and more authoritative.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-brand-text-dark hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-brand-text-dark hover:text-white transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="text-brand-text-dark hover:text-white transition-colors">
-                <Instagram size={20} />
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="font-display font-semibold text-lg mb-6">Services</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/services" className="text-brand-text-dark hover:text-gray-400 transition-colors">Business Websites</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-brand-text-dark hover:text-gray-400 transition-colors">E-commerce Solutions</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-brand-text-dark hover:text-gray-400 transition-colors">Portfolio Sites</Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-brand-text-dark hover:text-gray-400 transition-colors">AI Consulting</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display font-semibold text-lg mb-6">Company</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link to="/about" className="text-brand-text-dark hover:text-gray-400 transition-colors">About Us</Link>
-              </li>
-              <li>
-                <Link to="/portfolio" className="text-brand-text-dark hover:text-gray-400 transition-colors">Our Work</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-brand-text-dark hover:text-gray-400 transition-colors">Contact</Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-brand-text-dark hover:text-gray-400 transition-colors">Careers</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display font-semibold text-lg mb-6">Let's Talk</h3>
-            <p className="text-brand-text-dark mb-4">Ready to start your next project?</p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center text-gray-400 font-medium hover:text-gray-300 transition-colors group"
-            >
-              Get in touch <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <Link className="button-primary" to="/contact">
+              Start a Project <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <div className="mt-6 flex items-center text-brand-text-dark">
-              <Mail size={16} className="mr-2" />
-              <span>hello@wesleyconsults.com</span>
-            </div>
+          </div>
+
+          <div>
+            <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-white/65">
+              Services
+            </h3>
+            <ul className="space-y-3 text-sm text-mist">
+              {services.map((service) => (
+                <li key={service.id}>
+                  <Link className="transition hover:text-white" to={`/services#${service.id}`}>
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-white/65">
+              Sectors
+            </h3>
+            <ul className="space-y-3 text-sm text-mist">
+              {sectors.map((sector) => (
+                <li key={sector.id}>
+                  <Link className="transition hover:text-white" to={`/about#${sector.id}`}>
+                    {sector.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-white/65">
+              Contact
+            </h3>
+            <ul className="space-y-4 text-sm text-mist">
+              {contactMethods.map((method) => (
+                <li key={method.id}>
+                  {method.href ? (
+                    <a
+                      className="transition hover:text-white"
+                      href={method.href}
+                      rel={method.href.startsWith('http') ? 'noreferrer' : undefined}
+                      target={method.href.startsWith('http') ? '_blank' : undefined}
+                    >
+                      <span className="mb-1 block text-white">{method.label}</span>
+                      <span>{method.value}</span>
+                    </a>
+                  ) : (
+                    <>
+                      <span className="mb-1 block text-white">{method.label}</span>
+                      <span>{method.value}</span>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className="border-t border-brand-text-dark/40 pt-8 flex flex-col md:flex-row justify-between items-center text-brand-text-dark text-sm">
-          <p>&copy; {new Date().getFullYear()} Wesley Consults. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-gray-300 transition-colors">Terms of Service</a>
+        <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-mist md:flex-row md:items-center md:justify-between">
+          <p>&copy; {new Date().getFullYear()} Wesley Consults. Built for sharper first impressions.</p>
+          <div className="flex flex-wrap items-center gap-5">
+            <Link className="transition hover:text-white" to="/work">
+              Work
+            </Link>
+            <Link className="transition hover:text-white" to="/insights">
+              Insights
+            </Link>
+            {footerSecondaryLinks.map((link) => (
+              <Link className="transition hover:text-white" key={link.label} to={link.href}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

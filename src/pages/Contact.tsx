@@ -1,131 +1,141 @@
+import { ArrowUpRight } from 'lucide-react';
+import ContactPanel from '../components/ContactPanel';
 import Layout from '../components/Layout';
-import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import SectionHeading from '../components/SectionHeading';
+import { contactMethods } from '../content/siteContent';
 
 export default function Contact() {
   return (
     <Layout>
-      <div className="bg-brand-bg min-h-screen py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-brand-text mb-6">Get in Touch</h1>
-            <p className="text-xl text-brand-text-dark max-w-2xl mx-auto">
-              Ready to start your project? We'd love to hear from you.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Contact Info */}
-            <div className="lg:col-span-1 space-y-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="bg-brand-bg-light p-8 rounded-2xl shadow-sm border border-brand-text-dark/10"
-              >
-                <h3 className="text-xl font-bold text-brand-text mb-6">Contact Information</h3>
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <Mail className="w-6 h-6 text-brand-accent mt-1 mr-4" />
-                    <div>
-                      <p className="font-medium text-brand-text">Email</p>
-                      <a href="mailto:hello@wesleyconsults.com" className="text-brand-text-dark hover:text-brand-accent transition-colors">hello@wesleyconsults.com</a>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <Phone className="w-6 h-6 text-brand-accent mt-1 mr-4" />
-                    <div>
-                      <p className="font-medium text-brand-text">WhatsApp</p>
-                      <a href="#" className="text-brand-text-dark hover:text-brand-accent transition-colors">+1 (555) 123-4567</a>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <MapPin className="w-6 h-6 text-brand-accent mt-1 mr-4" />
-                    <div>
-                      <p className="font-medium text-brand-text">Location</p>
-                      <p className="text-brand-text-dark">San Francisco, CA<br />(Available Globally)</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 }}
-                className="bg-brand-accent p-8 rounded-2xl shadow-lg text-brand-text"
-              >
-                <h3 className="text-xl font-bold mb-4">Looking for a custom quote?</h3>
-                <p className="mb-6 text-gray-300">
-                  Tell us about your project requirements and we'll get back to you with a detailed proposal within 24 hours.
-                </p>
-              </motion.div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="bg-brand-bg-light p-8 md:p-10 rounded-3xl shadow-lg border border-brand-text-dark/10"
-              >
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-                      <input
-                        type="text"
-                        id="name"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                      <input
-                        type="email"
-                        id="email"
-                        className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all"
-                        placeholder="john@company.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                    <select
-                      id="subject"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all bg-brand-bg-light"
-                    >
-                      <option>General Inquiry</option>
-                      <option>New Website Project</option>
-                      <option>E-commerce Solution</option>
-                      <option>AI Consulting</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                    <textarea
-                      id="message"
-                      rows={6}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all resize-none"
-                      placeholder="Tell us about your project..."
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="button"
-                    className="w-full bg-brand-accent text-[#0A192F] font-bold py-4 rounded-xl hover:bg-brand-accent-hover transition-colors shadow-md hover:shadow-lg flex items-center justify-center"
-                  >
-                    Send Message <Send size={18} className="ml-2" />
-                  </button>
-                </form>
-              </motion.div>
+      <section className="section-space pb-12 pt-10 md:pt-14">
+        <div className="shell-container">
+          <div className="grid gap-10 lg:grid-cols-[0.82fr_1fr] lg:items-end">
+            <SectionHeading
+              description="Use the form if you want a structured starting point, but direct contact options stay visible so the page never feels like a dead-end form wall."
+              eyebrow="Contact"
+              title="Tell us what needs to change, what is not working, and what the site should do better."
+            />
+            <div className="surface-card space-y-4">
+              <p className="text-sm uppercase tracking-[0.24em] text-mist/70">Typical response</p>
+              <p className="text-3xl font-semibold tracking-[-0.04em] text-white">Within 24 hours</p>
+              <p className="text-sm leading-7 text-mist">
+                The most useful first message includes your business type, what the current site is failing to do, your target timeline, and whether the work is repositioning, redesign, or both.
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section className="section-space pt-8">
+        <div className="shell-container">
+          <div className="grid gap-6 xl:grid-cols-[0.82fr_1.18fr]">
+            <div className="space-y-6">
+              <ContactPanel methods={contactMethods} />
+
+              <div className="surface-card">
+                <p className="eyebrow mb-3">What to expect</p>
+                <div className="space-y-4 text-sm leading-7 text-mist">
+                  <p>We review fit, clarify scope, and recommend the smallest scope that will still move the business forward.</p>
+                  <p>If the right answer is a focused refinement rather than a full rebuild, that is the recommendation you should get.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-8">
+              <form className="space-y-6">
+                <div className="grid gap-5 md:grid-cols-2">
+                  <div>
+                    <label className="form-label" htmlFor="name">
+                      Name
+                    </label>
+                    <input className="form-input" id="name" placeholder="Your name" type="text" />
+                  </div>
+                  <div>
+                    <label className="form-label" htmlFor="email">
+                      Email
+                    </label>
+                    <input className="form-input" id="email" placeholder="you@company.com" type="email" />
+                  </div>
+                </div>
+
+                <div className="grid gap-5 md:grid-cols-2">
+                  <div>
+                    <label className="form-label" htmlFor="company">
+                      Company
+                    </label>
+                    <input className="form-input" id="company" placeholder="Company name" type="text" />
+                  </div>
+                  <div>
+                    <label className="form-label" htmlFor="project-type">
+                      Project Type
+                    </label>
+                    <select className="form-input" defaultValue="Website redesign" id="project-type">
+                      <option>Website redesign</option>
+                      <option>E-commerce build</option>
+                      <option>Portfolio experience</option>
+                      <option>AI advisory enquiry</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="form-label" htmlFor="timeline">
+                    Timeline
+                  </label>
+                  <select className="form-input" defaultValue="Next 1 to 2 months" id="timeline">
+                    <option>Immediately</option>
+                    <option>Next 1 to 2 months</option>
+                    <option>Quarter planning stage</option>
+                    <option>Exploring options</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="form-label" htmlFor="message">
+                    Project Brief
+                  </label>
+                  <textarea
+                    className="form-input min-h-44 resize-none"
+                    id="message"
+                    placeholder="What is the business, what needs to improve, and what should the new site achieve?"
+                  />
+                </div>
+
+                <button className="button-primary w-full" type="button">
+                  Request a Conversation <ArrowUpRight className="h-4 w-4" />
+                </button>
+              </form>
+
+              <div className="mt-6 rounded-[1.4rem] border border-mint/[0.15] bg-mint/[0.08] px-5 py-4 text-sm leading-7 text-mist">
+                Prefer direct contact? Email{' '}
+                <a className="font-medium text-mint" href="mailto:hello@wesleyconsults.com">
+                  hello@wesleyconsults.com
+                </a>{' '}
+                or start on WhatsApp for a faster first exchange.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-space pt-8">
+        <div className="shell-container">
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="surface-card">
+              <p className="eyebrow mb-3">1. First review</p>
+              <p className="text-sm leading-7 text-mist">We check fit, commercial intent, and whether the current issue is design, messaging, structure, or all three.</p>
+            </div>
+            <div className="surface-card">
+              <p className="eyebrow mb-3">2. Scope recommendation</p>
+              <p className="text-sm leading-7 text-mist">You get a clear recommendation on the right project shape, timeline expectation, and what should be prioritised first.</p>
+            </div>
+            <div className="surface-card">
+              <p className="eyebrow mb-3">3. Delivery path</p>
+              <p className="text-sm leading-7 text-mist">If there is a fit, we move into a structured process for strategy, design, build, and launch.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }
