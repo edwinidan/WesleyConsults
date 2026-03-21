@@ -116,8 +116,11 @@ h6 {
 
 .button-primary {
   @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2;
-  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold), var(--color-gold-dark));
-  box-shadow: 0 16px 34px rgba(184, 150, 62, 0.28);
+  background: var(--color-gold);
+  box-shadow: 0 16px 34px rgba(184, 150, 62, 0.25);
+}
+.button-primary:hover {
+  background: var(--color-gold-dark);
 }
 
 .button-secondary {
