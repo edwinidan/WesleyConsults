@@ -14,6 +14,11 @@
   --color-white: #ffffff;
   --color-border: rgba(17, 17, 17, 0.1);
   --color-border-strong: rgba(17, 17, 17, 0.18);
+
+  /* Gold accent from logo */
+  --color-gold: #b8963e;
+  --color-gold-light: #d4af6a;
+  --color-gold-dark: #8a6e2a;
 }
 
 :root {
@@ -29,7 +34,7 @@ body {
   min-height: 100vh;
   font-family: var(--font-sans);
   background:
-    radial-gradient(circle at top right, rgba(216, 207, 194, 0.48), transparent 24%),
+    radial-gradient(circle at top right, rgba(184, 150, 62, 0.12), transparent 28%),
     radial-gradient(circle at 12% 18%, rgba(17, 17, 17, 0.045), transparent 22%),
     linear-gradient(180deg, #f5f1e8 0%, #f1eadf 54%, #efe9dd 100%);
   color: var(--color-ink);
@@ -105,12 +110,14 @@ h6 {
 }
 
 .eyebrow {
-  @apply text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-ink/66;
+  @apply text-[0.7rem] font-semibold uppercase tracking-[0.32em];
+  color: var(--color-gold);
 }
 
 .button-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-canvas transition duration-300 hover:-translate-y-0.5 hover:bg-ink-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/35;
-  box-shadow: 0 16px 34px rgba(17, 17, 17, 0.15);
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2;
+  background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold), var(--color-gold-dark));
+  box-shadow: 0 16px 34px rgba(184, 150, 62, 0.28);
 }
 
 .button-secondary {
