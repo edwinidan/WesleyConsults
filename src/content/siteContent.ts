@@ -182,13 +182,39 @@ export const services: ServiceItem[] = [
     audience: 'Leaders exploring AI with a bias toward useful, controlled deployment.',
     tone: 'charcoal',
   },
+  {
+    id: 'mobile-development',
+    title: 'Mobile Development',
+    shortTitle: 'Mobile Apps',
+    summary: 'High-performance iOS and Android applications built for utility, retention, and seamless engagement.',
+    description:
+      'We design and develop custom mobile applications that feel native, fast, and intuitive. From complex internal tools to consumer-facing products, we prioritise stability, clean architecture, and exceptional user experience.',
+    outcomes: ['Higher user retention', 'Native-level performance', 'Seamless cross-platform experiences', 'Reliable offline capabilities'],
+    deliverables: ['iOS & Android builds', 'UX/UI design', 'API integration', 'App store deployment', 'Maintenance strategy'],
+    timeline: '10 to 16 weeks',
+    audience: 'Brands and scaling startups needing robust mobile extensions of their core service.',
+    tone: 'taupe',
+  },
+  {
+    id: 'web-applications',
+    title: 'Web Applications',
+    shortTitle: 'Web Apps',
+    summary: 'Custom digital platforms and portals designed to solve complex operational challenges efficiently.',
+    description:
+      'We build powerful, scalable bespoke web applications that streamline workflows, manage data securely, and provide immediate access across devices without the friction of dedicated app store downloads.',
+    outcomes: ['Streamlined internal operations', 'Highly scalable architecture', 'Secure data management', 'Frictionless cross-device usage'],
+    deliverables: ['Full-stack development', 'System architecture', 'Database design', 'User permission models', 'End-to-end testing'],
+    timeline: '12 to 20 weeks',
+    audience: 'Businesses requiring custom software solutions, dashboards, and internal platforms.',
+    tone: 'cream',
+  },
 ];
 
 export const navGroups: NavGroup[] = [
   {
     key: 'services',
     label: 'Services',
-    description: 'Four focused offers designed to improve clarity, credibility, and conversion.',
+    description: 'Focused offers designed to improve clarity, credibility, and conversion.',
     items: services.map((service) => ({
       label: service.title,
       description: service.summary,

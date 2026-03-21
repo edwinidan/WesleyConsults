@@ -31,26 +31,24 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50">
       {/* Pill wrapper — shrinks/expands on scroll */}
       <div
-        className={`mx-auto transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-          flat
-            ? // Flat: full shell width, transparent — matches shell-container sizing
-              'mt-0 max-w-7xl px-4 sm:px-6 lg:px-8 rounded-none border-0 bg-transparent shadow-none'
-            : // Pill: narrower, centered, white bg, rounded, shadow
-              'mt-3 max-w-4xl px-3 rounded-full border border-ink/10 bg-white/90 shadow-[0_8px_40px_rgba(17,17,17,0.10)] backdrop-blur-xl'
-        }`}
+        className={`mx-auto transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${flat
+          ? // Flat: full shell width, transparent — matches shell-container sizing
+          'mt-0 mx-3 sm:mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 rounded-none border-0 bg-transparent shadow-none'
+          : // Pill: narrower, centered, white bg, rounded, shadow
+          'mt-2 mx-3 sm:mx-auto sm:mt-3 max-w-4xl px-2 sm:px-3 rounded-full border border-ink/10 bg-white/90 shadow-[0_8px_40px_rgba(17,17,17,0.10)] backdrop-blur-xl'
+          }`}
       >
         <nav
           aria-label="Main navigation"
-          className="flex min-h-[4.25rem] items-center justify-between gap-6"
+          className="flex min-h-[3rem] md:min-h-[4.25rem] items-center justify-between gap-3 sm:gap-6"
         >
           {/* Logo */}
           <Link className="flex items-center gap-3" to="/">
             <span
-              className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border text-sm font-semibold tracking-[0.16em] transition-all duration-500 ${
-                flat
-                  ? 'border-ink/20 bg-canvas text-ink'
-                  : 'border-ink/12 bg-ink text-canvas'
-              }`}
+              className={`flex h-8 w-8 md:h-10 md:w-10 flex-shrink-0 items-center justify-center rounded-full border text-xs font-semibold tracking-[0.16em] transition-all duration-500 ${flat
+                ? 'border-ink/20 bg-canvas text-ink'
+                : 'border-ink/12 bg-ink text-canvas'
+                }`}
             >
               WC
             </span>
@@ -146,13 +144,12 @@ export default function Navbar() {
 
             <button
               aria-expanded={isOpen}
-              className={`inline-flex h-11 w-11 items-center justify-center rounded-full border text-ink transition-all duration-500 lg:hidden ${
-                flat ? 'border-ink/20 bg-transparent' : 'border-ink/10 bg-white/52'
-              }`}
+              className={`inline-flex h-8 w-8 md:h-11 md:w-11 flex-shrink-0 items-center justify-center rounded-full border text-ink transition-all duration-500 lg:hidden ${flat ? 'border-ink/20 bg-transparent' : 'border-ink/10 bg-white/52'
+                }`}
               onClick={() => setIsOpen((value) => !value)}
               type="button"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? <X className="h-4 w-4 md:h-5 md:w-5" /> : <Menu className="h-4 w-4 md:h-5 md:w-5" />}
             </button>
           </div>
         </nav>
