@@ -46,7 +46,7 @@ export default function Navbar() {
           <Link className="flex items-center gap-2" to="/">
             <img
               alt="Wesley Consults"
-              className="h-10 w-auto md:h-12 flex-shrink-0 object-contain"
+              className="h-11 w-auto md:h-[3.3rem] flex-shrink-0 object-contain"
               src="/wesleylogo.png"
             />
           </Link>
