@@ -25,14 +25,7 @@ export default function Home() {
         <div className="shell-container">
           <div className="flex flex-col justify-center pt-2 md:pt-4 pb-10">
             <div className="space-y-7">
-              <motion.span
-                animate={{ opacity: 1, y: 0 }}
-                className="eyebrow inline-block"
-                initial={{ opacity: 0, y: 12 }}
-                transition={{ duration: 0.45 }}
-              >
-                Wesley Consults
-              </motion.span>
+
               <motion.h1
                 animate={{ opacity: 1, y: 0 }}
                 className="max-w-4xl text-6xl font-semibold tracking-[-0.07em] text-ink sm:text-7xl lg:text-[5.6rem]"
