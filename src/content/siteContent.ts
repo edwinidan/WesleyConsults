@@ -92,7 +92,6 @@ export const brandMarks = [
 export const navLinks = [
   { label: 'Work', href: '/work' },
   { label: 'About', href: '/about' },
-  { label: 'Insights', href: '/insights' },
   { label: 'Contact', href: '/contact' },
 ];
 

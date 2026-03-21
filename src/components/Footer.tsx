@@ -66,9 +66,6 @@ export default function Footer() {
             <Link className="transition hover:text-canvas" to="/work">
               Work
             </Link>
-            <Link className="transition hover:text-canvas" to="/insights">
-              Insights
-            </Link>
             {footerSecondaryLinks.map((link) => (
               <Link className="transition hover:text-canvas" key={link.label} to={link.href}>
                 {link.label}

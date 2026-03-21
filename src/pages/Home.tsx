@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
 
 import FAQAccordion from '../components/FAQAccordion';
-import InsightCard from '../components/InsightCard';
 import Layout from '../components/Layout';
 import PortfolioCard from '../components/PortfolioCard';
 import SectionHeading from '../components/SectionHeading';
@@ -14,7 +13,6 @@ import {
   brandMarks,
   caseStudies,
   faqs,
-  insights,
   services,
 } from '../content/siteContent';
 
@@ -123,29 +121,6 @@ export default function Home() {
       </section>
 
 
-
-      <section className="section-space pt-8">
-        <div className="shell-container">
-          <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeading
-              description="Six placeholder editorial pieces that position the brand as a practical, strategy-led partner rather than a generic web vendor."
-              eyebrow="Insights"
-              title="Useful thinking on websites, positioning, e-commerce, and practical AI adoption."
-            />
-            <Link className="button-secondary" to="/insights">
-              Visit Insights <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-
-          <div className="grid gap-4 lg:grid-cols-3">
-            {insights.slice(0, 3).map((article) => (
-              <div key={article.id}>
-                <InsightCard article={article} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="section-space bg-canvas-alt/72 pt-8">
         <div className="shell-container">
