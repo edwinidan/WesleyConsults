@@ -46,7 +46,7 @@ export default function Navbar() {
           <Link className="flex items-center gap-2" to="/">
             <img
               alt="Wesley Consults"
-              className="h-12 w-auto md:h-[3.6rem] flex-shrink-0 object-contain"
+              className="h-11 w-auto md:h-[3.3rem] flex-shrink-0 object-contain"
               src="/wesleylogo.png"
             />
           </Link>
@@ -125,7 +125,7 @@ export default function Navbar() {
           {/* CTA + Mobile button */}
           <div className="flex items-center gap-3">
             <Link
-              className={`button-primary hidden lg:inline-flex transition-all duration-500 ${flat ? '' : 'text-sm'}`}
+              className={`button-primary hidden lg:inline-flex transition-all duration-500 !py-[0.475rem] ${flat ? '' : 'text-sm'}`}
               to="/contact"
             >
               Start a Project
