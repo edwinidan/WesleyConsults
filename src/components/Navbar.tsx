@@ -43,23 +43,12 @@ export default function Navbar() {
           className="flex min-h-[3rem] md:min-h-[4.25rem] items-center justify-between gap-3 sm:gap-6"
         >
           {/* Logo */}
-          <Link className="flex items-center gap-3" to="/">
-            <span
-              className={`flex h-8 w-8 md:h-10 md:w-10 flex-shrink-0 items-center justify-center rounded-full border text-xs font-semibold tracking-[0.16em] transition-all duration-500 ${flat
-                ? 'border-ink/20 bg-canvas text-ink'
-                : 'border-ink/12 bg-ink text-canvas'
-                }`}
-            >
-              WC
-            </span>
-            <div className="leading-tight">
-              <span className="block text-sm font-semibold uppercase tracking-[0.28em] text-ink">
-                Wesley Consults
-              </span>
-              <span className={`hidden text-xs text-muted transition-all duration-500 md:block ${flat ? 'opacity-100' : 'opacity-0 max-h-0 overflow-hidden'}`}>
-                Strategic websites and digital experiences
-              </span>
-            </div>
+          <Link className="flex items-center gap-2" to="/">
+            <img
+              alt="Wesley Consults"
+              className="h-8 w-auto md:h-10 flex-shrink-0 object-contain"
+              src="/wesleylogo.png"
+            />
           </Link>
 
           {/* Desktop nav links */}
