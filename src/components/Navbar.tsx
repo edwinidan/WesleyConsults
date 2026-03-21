@@ -49,9 +49,6 @@ export default function Navbar() {
               className="h-11 w-auto md:h-[3.3rem] flex-shrink-0 object-contain"
               src="/wesleylogo.png"
             />
-            <span className="font-display text-sm font-semibold uppercase tracking-[0.02em] text-ink">
-              Wesley Consults
-            </span>
           </Link>
 
           {/* Desktop nav links */}
