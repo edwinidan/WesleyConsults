@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'motion/react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, Rocket, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { navGroups, navLinks } from '../content/siteContent';
@@ -135,10 +135,11 @@ export default function Navbar() {
             </Link>
 
             <Link
-              className="button-primary inline-flex lg:hidden !py-[0.4rem] !px-4 text-xs transition-all duration-500"
+              aria-label="Start a Project"
+              className={`inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition-all duration-500 lg:hidden ${flat ? 'bg-gold/90 text-white' : 'bg-gold text-white'}`}
               to="/contact"
             >
-              Start a Project
+              <Rocket className="h-4 w-4" />
             </Link>
 
             <button
