@@ -114,25 +114,27 @@ h6 {
   color: var(--color-gold);
 }
 
-.button-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2;
-  background: var(--color-gold);
-  box-shadow: 0 16px 34px rgba(184, 150, 62, 0.25);
-}
-.button-primary:hover {
-  background: var(--color-gold-dark);
-}
+@layer components {
+  .button-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2;
+    background: var(--color-gold);
+    box-shadow: 0 16px 34px rgba(184, 150, 62, 0.25);
+  }
+  .button-primary:hover {
+    background: var(--color-gold-dark);
+  }
 
-.button-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/12 bg-surface/75 px-6 py-3.5 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-ink/20 hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/22;
-}
+  .button-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/12 bg-surface/75 px-6 py-3.5 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-ink/20 hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/22;
+  }
 
-.button-primary-inverse {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-canvas px-6 py-3.5 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30;
-}
+  .button-primary-inverse {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-canvas px-6 py-3.5 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30;
+  }
 
-.button-secondary-inverse {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/16 bg-white/6 px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-white/28 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/26;
+  .button-secondary-inverse {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/16 bg-white/6 px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-white/28 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/26;
+  }
 }
 
 .ambient-grid {

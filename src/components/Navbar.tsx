@@ -40,7 +40,7 @@ export default function Navbar() {
       >
         <nav
           aria-label="Main navigation"
-          className="flex min-h-[3rem] md:min-h-[4.25rem] items-center justify-between gap-3 sm:gap-6"
+          className="flex min-h-[2.7rem] md:min-h-[4.25rem] items-center justify-between gap-3 sm:gap-6"
         >
           {/* Logo */}
           <Link className="flex items-center gap-2" to="/">
@@ -129,6 +129,13 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               className={`button-primary hidden lg:inline-flex transition-all duration-500 !py-[0.475rem] ${flat ? '' : 'text-sm'}`}
+              to="/contact"
+            >
+              Start a Project
+            </Link>
+
+            <Link
+              className="button-primary inline-flex lg:hidden !py-[0.4rem] !px-4 text-xs transition-all duration-500"
               to="/contact"
             >
               Start a Project
