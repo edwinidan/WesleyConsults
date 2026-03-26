@@ -215,7 +215,7 @@ export const navGroups: NavGroup[] = [
     label: 'Services',
     description: 'Simple, practical services that help your business look great and grow online.',
     items: services.map((service) => ({
-      label: service.title,
+      label: service.shortTitle,
       description: service.summary,
       href: `/services#${service.id}`,
     })),

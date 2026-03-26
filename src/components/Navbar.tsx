@@ -7,7 +7,7 @@ import { navGroups, navLinks } from '../content/siteContent';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
-  const [mobileGroup, setMobileGroup] = useState<string | null>(navGroups[0]?.key ?? null);
+  const [mobileGroup, setMobileGroup] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === '/';
@@ -100,7 +100,6 @@ export default function Navbar() {
                             to={item.href}
                           >
                             <span className="block text-sm font-medium text-ink">{item.label}</span>
-                            <span className="mt-1 block text-sm leading-6 text-muted">{item.description}</span>
                           </Link>
                         ))}
                       </div>
@@ -208,8 +207,7 @@ export default function Navbar() {
                                   key={item.href}
                                   to={item.href}
                                 >
-                                  <span className="mb-1 block font-medium text-canvas">{item.label}</span>
-                                  <span className="block leading-6">{item.description}</span>
+                                  <span className="block font-medium text-canvas">{item.label}</span>
                                 </Link>
                               ))}
                             </div>

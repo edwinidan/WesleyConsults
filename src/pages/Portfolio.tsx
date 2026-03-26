@@ -32,17 +32,10 @@ export default function Portfolio() {
 
       <section className="section-space pt-8">
         <div className="shell-container">
-          <PortfolioCard featured study={featuredCaseStudy} />
-        </div>
-      </section>
-
-      <section className="section-space bg-canvas-alt/72 pt-10">
-        <div className="shell-container">
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {caseStudies.map((study) => (
-              <div key={study.id}>
-                <PortfolioCard study={study} />
-              </div>
+          <div className="grid gap-5">
+            <PortfolioCard featured study={featuredCaseStudy} />
+            {caseStudies.filter((study) => study.id !== featuredCaseStudy.id).map((study) => (
+              <PortfolioCard key={study.id} study={study} />
             ))}
           </div>
         </div>
