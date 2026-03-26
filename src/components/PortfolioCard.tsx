@@ -10,7 +10,7 @@ interface PortfolioCardProps {
 
 export default function PortfolioCard({ study, featured = false }: PortfolioCardProps) {
   const surfaceStyle = caseStudySurfaceStyles[study.surfaceStyle];
-  const divider = study.surfaceStyle === 'ink-feature' ? 'border-white/10' : 'border-ink/10';
+  const divider = study.surfaceStyle === 'ink-feature' ? 'border-white/10' : study.surfaceStyle === 'green-feature' ? 'border-[#5a9b5a]/18' : 'border-ink/10';
 
   return (
     <Link
@@ -19,9 +19,16 @@ export default function PortfolioCard({ study, featured = false }: PortfolioCard
     >
       <div
         className={`relative overflow-hidden border-b ${divider} ${featured ? 'min-h-[18rem] md:min-h-[22rem]' : 'min-h-[14rem]'}`}
-        style={{ backgroundImage: surfaceStyle.hero }}
+        style={{ backgroundImage: study.image ? undefined : surfaceStyle.hero }}
       >
-        <div className={`absolute inset-0 ${surfaceStyle.mesh}`} />
+        {study.image && (
+          <img
+            alt={study.title}
+            className={`absolute inset-0 h-full w-full ${study.imageContain ? 'object-contain p-8' : 'object-cover object-top'}`}
+            src={study.image}
+          />
+        )}
+        <div className={`absolute inset-0 ${surfaceStyle.mesh}`} style={{ opacity: study.image ? 0.55 : 1 }} />
         <div className="ambient-grid absolute inset-0 opacity-35" />
         <div className={`absolute inset-0 ${surfaceStyle.glaze}`} />
         <div className={`absolute left-6 top-6 rounded-full border px-3 py-1 text-xs uppercase tracking-[0.24em] ${surfaceStyle.category}`}>

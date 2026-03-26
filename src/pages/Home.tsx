@@ -72,20 +72,23 @@ export default function Home() {
 
       <section className="section-space">
         <div className="shell-container">
-          <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="mb-12">
             <SectionHeading
-              description="We bring a fresh perspective, creative ideas and extensive knowledge of technology and digital experiences. We partner with forward-thinking companies who share our passion for transformation. Our work is purposeful, with strategy at the core of everything we do."
               eyebrow="Services"
-              title="Wesley Consults is a strategic creative agency whose mission is to go above and beyond for the companies that we work with."
+              title="We help your business grow online — and we go the extra mile to make it happen."
             />
-            <Link className="button-secondary" to="/services">
-              View All Services <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <div key={service.id}>
+            {services.map((service, index) => (
+              <div key={service.id} className={index === services.length - 1 ? 'flex flex-col' : ''}>
                 <ServiceCard service={service} />
+                {index === services.length - 1 && (
+                  <div className="mt-4">
+                    <Link className="button-secondary" to="/services">
+                      View All Services <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -97,9 +100,8 @@ export default function Home() {
           <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="[&_h2]:text-canvas [&_.eyebrow]:text-canvas/64 [&_p]:text-canvas/70">
               <SectionHeading
-                description="Placeholder case studies shaped to match the new tone. Each project emphasises stronger narrative control, credibility, and measurable lift."
                 eyebrow="Selected Work"
-                title="Digital work designed to earn trust faster and convert with less friction."
+                title="Real projects. Real results."
               />
             </div>
             <Link className="button-secondary-inverse" to="/work">

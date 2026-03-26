@@ -5,7 +5,7 @@ export interface NavGroupItem {
 }
 
 export type ServiceTone = 'charcoal' | 'taupe' | 'cream';
-export type CaseStudySurfaceStyle = 'ink-feature' | 'taupe-feature' | 'cream-feature';
+export type CaseStudySurfaceStyle = 'ink-feature' | 'taupe-feature' | 'cream-feature' | 'green-feature';
 
 export interface NavGroup {
   key: string;
@@ -37,6 +37,8 @@ export interface CaseStudy {
   href: string;
   tags: string[];
   surfaceStyle: CaseStudySurfaceStyle;
+  image?: string;
+  imageContain?: boolean;
 }
 
 export interface StatMetric {
@@ -81,11 +83,9 @@ export interface ContactMethod {
 }
 
 export const brandMarks = [
-  'Northline',
-  'Verity Health',
-  'Atlas Commerce',
+  'Uncolonized Society',
+  'What Is My Temperament',
   'SignalStack',
-  'Riverbank Capital',
   'Studio Forma',
 ];
 
@@ -99,32 +99,32 @@ export const sectors: SectorItem[] = [
   {
     id: 'technology',
     title: 'Technology',
-    description: 'Positioning complex products so buyers understand the value in seconds.',
+    description: 'We help tech businesses explain what they do in plain English — so the right customers actually get it.',
   },
   {
     id: 'saas',
     title: 'SaaS',
-    description: 'Sharper onboarding, better product storytelling, and cleaner conversion paths.',
+    description: 'Better sign-up flows, clearer product pages, and more trials turning into paying customers.',
   },
   {
     id: 'ecommerce',
     title: 'E-commerce',
-    description: 'Premium storefronts designed to lift trust, average order value, and repeat purchase.',
+    description: 'Beautiful online shops that build trust and keep shoppers coming back for more.',
   },
   {
     id: 'finance',
     title: 'Finance',
-    description: 'High-credibility experiences for regulated brands that still need momentum.',
+    description: 'Professional, trustworthy websites for financial businesses that still need to attract new clients.',
   },
   {
     id: 'health',
     title: 'Health',
-    description: 'Structured interfaces and content systems for decision-heavy customer journeys.',
+    description: 'Clear, easy-to-navigate websites for health businesses where trust is everything.',
   },
   {
     id: 'professional-services',
     title: 'Professional Services',
-    description: 'Authority-led websites that help expert firms sell clarity instead of noise.',
+    description: 'Websites that show you\'re the expert — and make it easy for clients to choose you.',
   },
 ];
 
@@ -133,78 +133,78 @@ export const services: ServiceItem[] = [
     id: 'business-websites',
     title: 'Business Websites',
     shortTitle: 'Websites',
-    summary: 'Clear, premium websites for businesses that need to look established and sell with confidence.',
+    summary: 'A clean, professional website that makes your business look the part and turns visitors into paying customers.',
     description:
-      'We design and build conversion-focused company websites that turn expertise into momentum. The emphasis is on clarity, performance, and a visual language that feels expensive without being ornamental.',
-    outcomes: ['Sharper market positioning', 'Higher quality inbound leads', 'Faster load times', 'More persuasive service pages'],
-    deliverables: ['Messaging direction', 'Custom UI system', 'Responsive front-end build', 'SEO-ready structure', 'Launch support'],
+      'We build websites that are easy to navigate, fast to load, and make a great first impression. Whether you\'re a local shop or a growing service business, we make sure your site works hard for you.',
+    outcomes: ['Look more professional online', 'Get more enquiries from your site', 'Loads fast on any device', 'Makes it easy for customers to reach you'],
+    deliverables: ['Clear messaging', 'Custom design', 'Mobile-friendly build', 'Google-ready structure', 'Launch support'],
     timeline: '6 to 10 weeks',
-    audience: 'Growing firms, consultants, B2B brands, and service-led companies.',
+    audience: 'Local businesses, consultants, and service providers who want a website that actually works.',
     tone: 'charcoal',
   },
   {
     id: 'ecommerce-platforms',
     title: 'E-commerce Platforms',
     shortTitle: 'E-commerce',
-    summary: 'Storefronts built to increase trust, reduce friction, and create a premium buying experience.',
+    summary: 'An online shop that\'s easy to use, looks great, and gets customers all the way to checkout.',
     description:
-      'For brands selling directly online, we combine merchandised storytelling, structured browsing, and friction-light conversion flows so the storefront performs like a top sales channel.',
-    outcomes: ['Improved conversion rate', 'More confident product discovery', 'Stronger mobile checkout', 'Higher perceived value'],
-    deliverables: ['Storefront design', 'Collection architecture', 'Product page systems', 'Checkout optimisation', 'Analytics setup'],
+      'We design your online store so shoppers can find what they want quickly and buy with confidence. Less frustration for your customers means more sales for you.',
+    outcomes: ['More completed purchases', 'Easier product browsing', 'Smooth checkout on mobile', 'Looks trustworthy to new buyers'],
+    deliverables: ['Shop design', 'Product page setup', 'Category layout', 'Checkout improvements', 'Sales tracking'],
     timeline: '8 to 12 weeks',
-    audience: 'Ambitious consumer brands and retailers modernising digital commerce.',
+    audience: 'Small businesses and retailers ready to sell more online.',
     tone: 'taupe',
   },
   {
     id: 'portfolio-brand-experiences',
     title: 'Portfolio & Brand Experiences',
     shortTitle: 'Portfolio',
-    summary: 'Digital experiences that help studios, founders, and premium brands feel unmistakable.',
+    summary: 'A website that shows off your best work and makes people remember your name.',
     description:
-      'When the brand itself is the product, the site needs stronger narrative, sharper art direction, and more control over pacing. We build showcase-led experiences that make the work land harder.',
-    outcomes: ['Clearer differentiation', 'More memorable first impressions', 'Better storytelling cadence', 'Stronger visual authority'],
-    deliverables: ['Narrative structure', 'Case-study templates', 'Motion direction', 'Art-directed page layouts', 'Content guidance'],
+      'When your reputation is everything, your website needs to reflect that. We build portfolio sites that tell your story clearly and make a strong impression on the right people.',
+    outcomes: ['Stand out from competitors', 'Make a stronger first impression', 'Tell your story better', 'Look like the go-to expert in your field'],
+    deliverables: ['Page layout and structure', 'Case study templates', 'Subtle animations', 'Eye-catching visuals', 'Content tips'],
     timeline: '5 to 9 weeks',
-    audience: 'Agencies, creators, studios, property brands, and founder-led ventures.',
+    audience: 'Freelancers, agencies, studios, and founders who want their online presence to match their real-world reputation.',
     tone: 'cream',
   },
   {
     id: 'ai-advisory',
     title: 'AI Advisory',
     shortTitle: 'AI Advisory',
-    summary: 'A coming-soon offer focused on private, practical AI systems for operational leverage.',
+    summary: 'Simple, honest advice on where AI can save your business time and money — without the confusing tech talk.',
     description:
-      'We are preparing a focused advisory offer for companies that want to apply AI to content operations, internal tooling, and customer workflows without introducing noise or unnecessary risk.',
-    outcomes: ['Sharper AI roadmap', 'More practical automation targets', 'Lower experimentation waste', 'Stronger governance thinking'],
-    deliverables: ['Use-case workshop', 'Opportunity mapping', 'Implementation brief', 'Vendor and tooling guidance', 'Pilot recommendations'],
+      'Not sure where to start with AI? We help you figure out which tools are actually worth it for your business and which ones to skip. No hype, no confusion — just practical next steps.',
+    outcomes: ['A clear AI plan that makes sense', 'Find quick wins for your business', 'Avoid wasting money on the wrong tools', 'Know exactly what to do next'],
+    deliverables: ['Needs assessment', 'Opportunity breakdown', 'Action plan', 'Tool recommendations', 'Pilot suggestions'],
     timeline: '3 to 6 weeks',
-    audience: 'Leaders exploring AI with a bias toward useful, controlled deployment.',
+    audience: 'Business owners curious about AI but not sure where to begin.',
     tone: 'charcoal',
   },
   {
     id: 'mobile-development',
     title: 'Mobile Development',
     shortTitle: 'Mobile Apps',
-    summary: 'High-performance iOS and Android applications built for utility, retention, and seamless engagement.',
+    summary: 'A mobile app that works beautifully on iPhone and Android — built for your customers.',
     description:
-      'We design and develop custom mobile applications that feel native, fast, and intuitive. From complex internal tools to consumer-facing products, we prioritise stability, clean architecture, and exceptional user experience.',
-    outcomes: ['Higher user retention', 'Native-level performance', 'Seamless cross-platform experiences', 'Reliable offline capabilities'],
-    deliverables: ['iOS & Android builds', 'UX/UI design', 'API integration', 'App store deployment', 'Maintenance strategy'],
+      'We design and build apps that are fast, easy to use, and keep people coming back. Whether it\'s for your customers or your team, we make it feel smooth and reliable.',
+    outcomes: ['Customers keep coming back', 'App feels fast and smooth', 'Works on iPhone and Android', 'Reliable even without internet'],
+    deliverables: ['iPhone & Android app', 'Design & user experience', 'System integrations', 'App store launch', 'Ongoing support plan'],
     timeline: '10 to 16 weeks',
-    audience: 'Brands and scaling startups needing robust mobile extensions of their core service.',
+    audience: 'Businesses ready to give their customers a better experience on their phones.',
     tone: 'taupe',
   },
   {
     id: 'web-applications',
     title: 'Web Applications',
     shortTitle: 'Web Apps',
-    summary: 'Custom digital platforms and portals designed to solve complex operational challenges efficiently.',
+    summary: 'A custom tool built for your business — so your team can stop working around broken systems.',
     description:
-      'We build powerful, scalable bespoke web applications that streamline workflows, manage data securely, and provide immediate access across devices without the friction of dedicated app store downloads.',
-    outcomes: ['Streamlined internal operations', 'Highly scalable architecture', 'Secure data management', 'Frictionless cross-device usage'],
-    deliverables: ['Full-stack development', 'System architecture', 'Database design', 'User permission models', 'End-to-end testing'],
+      'We build web-based software that fits the way your business actually works. Think booking systems, client portals, or custom dashboards — anything that saves your team time and reduces mistakes.',
+    outcomes: ['Your team works faster', 'Scales as your business grows', 'Data is safe and organised', 'Works on any device, anywhere'],
+    deliverables: ['Full build from scratch', 'System design', 'Data storage setup', 'User access controls', 'Testing and quality checks'],
     timeline: '12 to 20 weeks',
-    audience: 'Businesses requiring custom software solutions, dashboards, and internal platforms.',
+    audience: 'Businesses that need custom software and are done trying to make generic tools work.',
     tone: 'cream',
   },
 ];
@@ -213,7 +213,7 @@ export const navGroups: NavGroup[] = [
   {
     key: 'services',
     label: 'Services',
-    description: 'Focused offers designed to improve clarity, credibility, and conversion.',
+    description: 'Simple, practical services that help your business look great and grow online.',
     items: services.map((service) => ({
       label: service.title,
       description: service.summary,
@@ -223,7 +223,7 @@ export const navGroups: NavGroup[] = [
   {
     key: 'sectors',
     label: 'Sectors',
-    description: 'Industries where positioning and premium trust signals matter most.',
+    description: 'Industries we\'ve helped — and we probably know yours too.',
     items: sectors.map((sector) => ({
       label: sector.title,
       description: sector.description,
@@ -234,48 +234,29 @@ export const navGroups: NavGroup[] = [
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: 'northline',
-    title: 'Northline Systems',
-    category: 'B2B Website',
-    client: 'Northline',
-    summary: 'A more authoritative digital presence for an infrastructure software partner selling into enterprise teams.',
-    impact: '42% lift in qualified contact enquiries within the first quarter.',
-    href: '/work',
-    tags: ['Strategy', 'UX/UI', 'Development'],
-    surfaceStyle: 'ink-feature',
+    id: 'whatismytemperament',
+    title: 'What Is My Temperament',
+    category: 'Web Application',
+    client: 'WhatIsMyTemperament',
+    summary: 'A clean, privacy-focused personality assessment tool that helps users discover their temperament type through a simple, interactive quiz — no sign-up required.',
+    impact: 'Built a fully functional web app delivering instant personality insights to students, couples, and teams in under 5 minutes.',
+    href: 'https://www.whatismytemperament.com/',
+    tags: ['Web App', 'Psychology', 'Education'],
+    surfaceStyle: 'green-feature',
+    image: '/whatismytemperamentlogo.png',
+    imageContain: true,
   },
   {
-    id: 'verity',
-    title: 'Verity Health',
-    category: 'Healthcare Platform',
-    client: 'Verity Health',
-    summary: 'A calmer, more structured experience for a health brand balancing trust, compliance, and growth.',
-    impact: '31% increase in demo requests from decision-makers.',
-    href: '/work',
-    tags: ['Brand Refresh', 'Content Systems', 'Front-end'],
-    surfaceStyle: 'cream-feature',
-  },
-  {
-    id: 'atlas',
-    title: 'Atlas Commerce',
+    id: 'uncolonized-society',
+    title: 'Uncolonized Society',
     category: 'E-commerce',
-    client: 'Atlas',
-    summary: 'A premium storefront redesign focused on merchandised storytelling and faster path-to-purchase.',
-    impact: '18% increase in average order value after launch.',
-    href: '/work',
-    tags: ['Commerce UX', 'Product Pages', 'Optimisation'],
-    surfaceStyle: 'taupe-feature',
-  },
-  {
-    id: 'riverbank',
-    title: 'Riverbank Capital',
-    category: 'Finance Website',
-    client: 'Riverbank',
-    summary: 'A more assured investor-facing site with sharper narrative structure and higher-performing service pages.',
-    impact: '2.6x growth in time spent on strategic service pages.',
-    href: '/work',
-    tags: ['Messaging', 'Design System', 'Launch'],
+    client: 'Uncolonized Society',
+    summary: 'A bold e-commerce storefront for an Afro-Streetwear brand based in Accra and Takoradi, built to match their "mental sovereignty" identity and sell with confidence online.',
+    impact: 'Launched the brand\'s first online store — giving them a professional platform to reach customers across Ghana and beyond.',
+    href: 'https://uncolonized-society-ha8d.vercel.app/',
+    tags: ['E-commerce', 'Fashion', 'Brand Identity'],
     surfaceStyle: 'ink-feature',
+    image: 'https://uncolonized-society-ha8d.vercel.app/images/brand/hero.jpeg',
   },
   {
     id: 'forma',
@@ -399,54 +380,54 @@ export const insights: InsightArticle[] = [
 export const faqs: FaqItem[] = [
   {
     id: 'fit',
-    question: 'What kind of companies are the best fit for Wesley Consults?',
+    question: 'Is Wesley Consults a good fit for my business?',
     answer:
-      'The best fit is usually a business that has already proven demand and now needs a sharper digital presence to support growth. That includes service firms, SaaS companies, premium e-commerce brands, and founder-led businesses with a serious offer.',
+      'If you\'re a local business, consultant, or service provider who wants a better online presence, you\'re in the right place. We work with businesses of all sizes — from sole traders to growing teams.',
   },
   {
     id: 'timeline',
-    question: 'How long does a typical project take?',
+    question: 'How long does a project take?',
     answer:
-      'Focused website projects usually land in six to ten weeks. E-commerce or broader brand-and-site engagements can take longer depending on content complexity, integrations, and stakeholder review cycles.',
+      'Most websites are ready in six to ten weeks. Online shops or bigger projects may take a little longer, depending on how much content and features are involved. We\'ll always give you a clear timeline upfront.',
   },
   {
     id: 'seo-friendly',
-    question: 'Will the website be SEO-friendly and performance-conscious?',
+    question: 'Will my website show up on Google?',
     answer:
-      'Yes. The build approach prioritises structure, metadata, semantic HTML, responsive performance, and content clarity. The goal is a site that is easier to discover, easier to use, and easier to maintain.',
+      'Yes. Every site we build is set up to be found on Google — with the right structure, fast loading, and clear content. We make sure your site is ready to be discovered from day one.',
   },
   {
     id: 'collaboration',
-    question: 'How do you keep the process clear during a project?',
+    question: 'Will I know what\'s happening throughout the project?',
     answer:
-      'Projects run through defined checkpoints for strategy, design, build, and launch. You know what is being decided, when feedback is needed, and what each milestone is intended to achieve.',
+      'Absolutely. We check in with you at every key stage — from the initial plan to the final launch. You\'ll always know what\'s being worked on and when we need your input.',
   },
   {
     id: 'deadlines',
-    question: 'Can you work to a tight deadline?',
+    question: 'What if I need it done quickly?',
     answer:
-      'Yes, when the scope is honest. If speed is a priority, the work can be phased so the most commercially important pages and journeys go live first without compromising the final direction.',
+      'We can work to tighter deadlines. If you\'re in a hurry, we\'ll prioritise the most important pages first so you can go live sooner — without cutting corners on quality.',
   },
 ];
 
 export const serviceFaqs: FaqItem[] = [
   {
     id: 'content',
-    question: 'Do you also help with website copy and content structure?',
+    question: 'Can you help me figure out what to say on my website?',
     answer:
-      'Yes. Even when full copywriting is not part of the engagement, the structure, hierarchy, and conversion logic are shaped so your content performs more clearly.',
+      'Yes. We help you structure your content so it\'s clear and persuasive — even if you\'re not a natural writer. Your message will make sense to your customers.',
   },
   {
     id: 'platform',
-    question: 'Can the site be updated after launch?',
+    question: 'Can I update the site myself after it\'s live?',
     answer:
-      'That is the goal. The front-end is structured so future content updates, case studies, and service changes can be handled cleanly without a full redesign.',
+      'Yes, that\'s the plan. We build your site so you can make simple updates — like adding new services or photos — without needing to call us every time.',
   },
   {
     id: 'ai',
-    question: 'Is the AI advisory offer live yet?',
+    question: 'Is the AI advisory service available now?',
     answer:
-      'Not as a formal productised service. It is currently positioned as an upcoming offer for teams interested in private, practical AI implementation planning.',
+      'Not quite yet. It\'s coming soon for business owners who want practical help using AI tools — without the jargon or confusing tech talk.',
   },
 ];
 
@@ -475,35 +456,35 @@ export const contactMethods: ContactMethod[] = [
 
 export const processSteps = [
   {
-    title: 'Position the offer',
-    description: 'Clarify the audience, differentiators, and commercial goal before visual exploration begins.',
+    title: 'Understand your business',
+    description: 'We start by getting to know you — your customers, what makes you different, and what you want to achieve.',
   },
   {
-    title: 'Design the system',
-    description: 'Translate the strategy into page structure, visual hierarchy, and a reusable interface language.',
+    title: 'Design it right',
+    description: 'We turn your goals into a clear, great-looking website that makes sense for your customers.',
   },
   {
-    title: 'Build for launch',
-    description: 'Develop responsive pages, validate the interaction details, and prepare a clean production release.',
+    title: 'Build and go live',
+    description: 'We build your site, test everything, and get it live — on time and without the headaches.',
   },
 ];
 
 export const aboutPrinciples = [
   {
-    title: 'Clarity over noise',
-    description: 'Premium work starts by removing friction, not adding visual clutter.',
+    title: 'Keep it simple',
+    description: 'Less clutter, clearer message. We remove what gets in the way and keep what matters.',
   },
   {
-    title: 'Strategy in the interface',
-    description: 'The design should explain the business model, not distract from it.',
+    title: 'Your website should sell for you',
+    description: 'Good design explains your business and gives customers a reason to choose you.',
   },
   {
-    title: 'Performance as polish',
-    description: 'A fast experience feels more credible, more controlled, and more expensive.',
+    title: 'Fast feels professional',
+    description: 'A website that loads quickly builds trust. Slow sites lose customers before they even start.',
   },
   {
-    title: 'Practical innovation',
-    description: 'New technology is useful only when it creates measurable leverage.',
+    title: 'Tech that actually helps',
+    description: 'We only use new technology when it makes a real difference to your business — not just because it\'s trendy.',
   },
 ];
 

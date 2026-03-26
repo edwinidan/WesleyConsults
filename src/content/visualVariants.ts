@@ -84,6 +84,22 @@ export const caseStudySurfaceStyles: Record<
     impact: 'text-ink/76',
     action: 'text-ink',
   },
+  'green-feature': {
+    card:
+      'border-[#5a9b5a]/20 bg-[#eef7ee] text-ink shadow-[0_24px_64px_rgba(90,155,90,0.14)] hover:border-[#5a9b5a]/35 hover:bg-[#e4f2e4] hover:shadow-[0_28px_72px_rgba(90,155,90,0.18)]',
+    hero:
+      'linear-gradient(140deg, rgba(90,155,90,0.95), rgba(70,130,70,0.92) 50%, rgba(45,100,45,0.96))',
+    mesh:
+      'bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.22),transparent_24%),radial-gradient(circle_at_20%_75%,rgba(255,255,255,0.1),transparent_30%)]',
+    glaze: 'bg-[linear-gradient(180deg,transparent,rgba(35,85,35,0.55))]',
+    category: 'border-white/18 bg-white/12 text-white/80',
+    client: 'text-white/68',
+    title: 'text-white',
+    summary: 'text-ink/72',
+    tag: 'border-[#5a9b5a]/22 bg-[#5a9b5a]/10 text-ink/70',
+    impact: 'text-ink/75',
+    action: 'text-ink-soft',
+  },
   'cream-feature': {
     card:
       'border-ink/10 bg-canvas text-ink shadow-[0_24px_64px_rgba(17,17,17,0.08)] hover:border-ink/20 hover:bg-[#f8f4ec] hover:shadow-[0_28px_72px_rgba(17,17,17,0.1)]',
