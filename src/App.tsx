@@ -4,7 +4,7 @@
  */
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
@@ -14,7 +14,7 @@ import Contact from './pages/Contact';
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (hash) {
       window.requestAnimationFrame(() => {
         const element = document.getElementById(hash.slice(1));

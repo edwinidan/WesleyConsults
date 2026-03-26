@@ -10,10 +10,10 @@ export default function CTASection() {
             <div className="space-y-5">
               <span className="eyebrow text-canvas/64">Start a project</span>
               <h2 className="max-w-2xl text-4xl font-semibold tracking-[-0.05em] text-canvas md:text-5xl">
-                If the site no longer reflects the quality of the business, it is time to rebuild the signal.
+                Your website should work as hard as you do.
               </h2>
               <p className="max-w-2xl text-base leading-7 text-canvas/70 md:text-lg">
-                Wesley Consults helps ambitious teams tighten the story, redesign the experience, and launch websites that feel more credible from the first screen.
+                If your site isn't bringing in customers, let's fix that. We build websites that look great and actually get results.
               </p>
             </div>
 
