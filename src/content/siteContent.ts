@@ -5,7 +5,7 @@ export interface NavGroupItem {
 }
 
 export type ServiceTone = 'charcoal' | 'taupe' | 'cream';
-export type CaseStudySurfaceStyle = 'ink-feature' | 'taupe-feature' | 'cream-feature' | 'green-feature';
+export type CaseStudySurfaceStyle = 'ink-feature' | 'taupe-feature' | 'cream-feature' | 'green-feature' | 'wine-feature';
 
 export interface NavGroup {
   key: string;
@@ -267,7 +267,7 @@ export const caseStudies: CaseStudy[] = [
     impact: 'Delivered a polished digital presence that matches the quality of the in-person dining experience.',
     href: 'https://ember-vine.vercel.app/',
     tags: ['Restaurant', 'Hospitality', 'Brand Experience'],
-    surfaceStyle: 'taupe-feature',
+    surfaceStyle: 'wine-feature',
   },
   {
     id: 'forma',

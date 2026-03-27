@@ -10,7 +10,7 @@ interface PortfolioCardProps {
 
 export default function PortfolioCard({ study, featured = false }: PortfolioCardProps) {
   const surfaceStyle = caseStudySurfaceStyles[study.surfaceStyle];
-  const divider = study.surfaceStyle === 'ink-feature' ? 'border-white/10' : study.surfaceStyle === 'green-feature' ? 'border-[#5a9b5a]/18' : 'border-ink/10';
+  const divider = study.surfaceStyle === 'ink-feature' ? 'border-white/10' : study.surfaceStyle === 'green-feature' ? 'border-[#5a9b5a]/18' : study.surfaceStyle === 'wine-feature' ? 'border-[#7B1E2E]/18' : 'border-ink/10';
 
   return (
     <Link
