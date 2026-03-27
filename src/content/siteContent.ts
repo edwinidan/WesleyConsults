@@ -259,6 +259,17 @@ export const caseStudies: CaseStudy[] = [
     image: 'https://uncolonized-society-ha8d.vercel.app/images/brand/hero.jpeg',
   },
   {
+    id: 'ember-vine',
+    title: 'Ember & Vine',
+    category: 'Restaurant Website',
+    client: 'Ember & Vine',
+    summary: 'An upscale dining website for a premium restaurant, designed to reflect the warmth and refinement of the brand and convert visitors into reservations.',
+    impact: 'Delivered a polished digital presence that matches the quality of the in-person dining experience.',
+    href: 'https://ember-vine.vercel.app/',
+    tags: ['Restaurant', 'Hospitality', 'Brand Experience'],
+    surfaceStyle: 'taupe-feature',
+  },
+  {
     id: 'forma',
     title: 'Studio Forma',
     category: 'Portfolio Experience',
