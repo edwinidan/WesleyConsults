@@ -7,7 +7,7 @@ import { insights } from '../content/siteContent';
 export default function Insights() {
   return (
     <Layout>
-      <section className="section-space pb-12 pt-10 md:pt-14">
+      <section className="pb-12 pt-4 md:pt-6">
         <div className="shell-container">
           <SectionHeading
             description="A placeholder editorial layer for the redesign, structured to support future publishing around strategy, websites, commerce, SEO, and practical AI implementation."

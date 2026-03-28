@@ -10,7 +10,7 @@ import { caseStudies, featuredCaseStudy, metrics } from '../content/siteContent'
 export default function Portfolio() {
   return (
     <Layout>
-      <section className="section-space pb-12 pt-10 md:pt-14">
+      <section className="pb-12 pt-4 md:pt-6">
         <div className="shell-container">
           <div className="grid gap-6 lg:grid-cols-[0.78fr_1fr] lg:items-end">
             <SectionHeading

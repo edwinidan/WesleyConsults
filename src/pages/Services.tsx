@@ -7,7 +7,7 @@ import { serviceToneStyles } from '../content/visualVariants';
 export default function Services() {
   return (
     <Layout>
-      <section className="section-space pb-12 pt-10 md:pt-14">
+      <section className="pb-12 pt-4 md:pt-6">
         <div className="shell-container">
           <SectionHeading
             description="The service mix stays focused: business websites, e-commerce platforms, portfolio experiences, and a coming-soon AI advisory layer for practical implementation planning."

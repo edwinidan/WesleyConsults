@@ -13,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
       <Navbar />
       <motion.main
         animate={{ opacity: 1 }}
-        className="relative flex-grow pt-24"
+        className="relative flex-grow pt-20"
         initial={{ opacity: 0 }}
         transition={{ duration: 0.35 }}
       >

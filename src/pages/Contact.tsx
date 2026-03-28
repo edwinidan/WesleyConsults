@@ -7,7 +7,7 @@ import { contactMethods } from '../content/siteContent';
 export default function Contact() {
   return (
     <Layout>
-      <section className="section-space pb-12 pt-10 md:pt-14">
+      <section className="pb-12 pt-4 md:pt-6">
         <div className="shell-container">
           <div className="grid gap-10 lg:grid-cols-[0.82fr_1fr] lg:items-end">
             <SectionHeading

@@ -6,7 +6,7 @@ import { aboutPrinciples, processSteps, sectors } from '../content/siteContent';
 export default function About() {
   return (
     <Layout>
-      <section className="section-space pb-14 pt-10 md:pt-14">
+      <section className="pb-14 pt-4 md:pt-6">
         <div className="shell-container">
           <div className="grid gap-8 lg:grid-cols-[0.82fr_1fr] lg:items-end">
             <SectionHeading
