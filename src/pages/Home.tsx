@@ -19,9 +19,9 @@ import {
 export default function Home() {
   return (
     <Layout>
-      <section className="pb-16 pt-4 md:pb-20 md:pt-8">
+      <section className="pb-4 md:pb-6">
         <div className="shell-container">
-          <div className="flex flex-col justify-center pt-2 md:pt-4 pb-10">
+          <div className="flex flex-col justify-center">
             <div className="space-y-7">
               <motion.span
                 animate={{ opacity: 1, y: 0 }}
