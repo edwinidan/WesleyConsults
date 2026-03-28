@@ -446,8 +446,8 @@ export const contactMethods: ContactMethod[] = [
   {
     id: 'email',
     label: 'Email',
-    value: 'hello@wesleyconsults.com',
-    href: 'mailto:hello@wesleyconsults.com',
+    value: 'wesleyconsults@gmail.com',
+    href: 'mailto:wesleyconsults@gmail.com',
     note: 'Best for project enquiries and detailed briefs.',
   },
   {

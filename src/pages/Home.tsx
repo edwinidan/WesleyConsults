@@ -3,7 +3,6 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
 
-import FAQAccordion from '../components/FAQAccordion';
 import Layout from '../components/Layout';
 import PortfolioCard from '../components/PortfolioCard';
 import SectionHeading from '../components/SectionHeading';
@@ -12,7 +11,6 @@ import TrustedByRail from '../components/TrustedByRail';
 import {
   brandMarks,
   caseStudies,
-  faqs,
   services,
 } from '../content/siteContent';
 
@@ -23,14 +21,6 @@ export default function Home() {
         <div className="shell-container">
           <div className="flex flex-col justify-center">
             <div className="space-y-7">
-              <motion.span
-                animate={{ opacity: 1, y: 0 }}
-                className="eyebrow inline-block"
-                initial={{ opacity: 0, y: 12 }}
-                transition={{ duration: 0.45 }}
-              >
-                Wesley Consults
-              </motion.span>
               <motion.h1
                 animate={{ opacity: 1, y: 0 }}
                 className="max-w-4xl text-6xl font-semibold tracking-[-0.07em] text-ink sm:text-7xl lg:text-[5.6rem]"
@@ -123,19 +113,6 @@ export default function Home() {
       </section>
 
 
-
-      <section className="section-space bg-canvas-alt/72 pt-8">
-        <div className="shell-container">
-          <div className="grid gap-10 lg:grid-cols-[0.78fr_1fr]">
-            <SectionHeading
-              description="The FAQ content stays practical and direct, focused on fit, timelines, SEO, collaboration, and delivery constraints."
-              eyebrow="Frequently Asked Questions"
-              title="Questions teams usually ask before the project starts."
-            />
-            <FAQAccordion items={faqs} />
-          </div>
-        </div>
-      </section>
 
       <CTASection />
     </Layout>

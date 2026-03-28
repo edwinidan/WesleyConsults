@@ -1,8 +1,7 @@
 import CTASection from '../components/CTASection';
-import FAQAccordion from '../components/FAQAccordion';
 import Layout from '../components/Layout';
 import SectionHeading from '../components/SectionHeading';
-import { processSteps, serviceFaqs, services } from '../content/siteContent';
+import { processSteps, services } from '../content/siteContent';
 import { serviceToneStyles } from '../content/visualVariants';
 
 export default function Services() {
@@ -123,19 +122,6 @@ export default function Services() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-space pt-8">
-        <div className="shell-container">
-          <div className="grid gap-10 lg:grid-cols-[0.78fr_1fr]">
-            <SectionHeading
-              description="Service-specific questions around content, future updates, and the AI advisory offer."
-              eyebrow="Service FAQ"
-              title="Practical questions before you commit to a scope."
-            />
-            <FAQAccordion items={serviceFaqs} />
           </div>
         </div>
       </section>

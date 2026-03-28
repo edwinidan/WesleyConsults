@@ -108,8 +108,8 @@ export default function Contact() {
 
               <div className="mt-6 rounded-[1.4rem] border border-ink/10 bg-surface/68 px-5 py-4 text-sm leading-7 text-ink/74">
                 Prefer direct contact? Email{' '}
-                <a className="font-medium text-ink" href="mailto:hello@wesleyconsults.com">
-                  hello@wesleyconsults.com
+                <a className="font-medium text-ink" href="mailto:wesleyconsults@gmail.com">
+                  wesleyconsults@gmail.com
                 </a>{' '}
                 or start on WhatsApp for a faster first exchange.
               </div>
