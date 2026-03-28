@@ -444,6 +444,13 @@ export const serviceFaqs: FaqItem[] = [
 
 export const contactMethods: ContactMethod[] = [
   {
+    id: 'phone',
+    label: 'WhatsApp',
+    value: '',
+    href: 'https://wa.me/233500610780',
+    note: 'Useful for quick questions and early-fit conversations.',
+  },
+  {
     id: 'email',
     label: 'Email',
     value: 'wesleyconsults@gmail.com',
@@ -451,16 +458,9 @@ export const contactMethods: ContactMethod[] = [
     note: 'Best for project enquiries and detailed briefs.',
   },
   {
-    id: 'phone',
-    label: 'WhatsApp',
-    value: '+1 (555) 123-4567',
-    href: 'https://wa.me/15551234567',
-    note: 'Useful for quick questions and early-fit conversations.',
-  },
-  {
     id: 'location',
     label: 'Location',
-    value: 'Working globally from Accra and remote partner hubs',
+    value: 'Ghana — Takoradi & Accra',
     note: 'Structured to collaborate across time zones without friction.',
   },
 ];
