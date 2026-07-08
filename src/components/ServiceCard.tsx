@@ -12,7 +12,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
 
   return (
     <Link
-      className="group surface-card flex h-full flex-col justify-between transition duration-300 hover:-translate-y-1 hover:border-ink/18 hover:bg-white/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/18"
+      className="group surface-card flex h-full flex-col justify-between transition duration-300 hover:-translate-y-1 hover:border-gold/30 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
       to={`/services#${service.id}`}
     >
       <div className="space-y-5">
@@ -28,7 +28,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
         </div>
       </div>
 
-      <div className="mt-8 flex items-center justify-between border-t border-ink/10 pt-5">
+      <div className="mt-8 flex items-center justify-between border-t border-black/5 pt-5">
         <span className="text-sm font-medium text-muted">{service.timeline}</span>
         <span className={`inline-flex items-center gap-2 text-sm font-medium ${toneStyle.link}`}>
           Explore service <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

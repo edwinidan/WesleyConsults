@@ -34,8 +34,8 @@ export default function Navbar() {
         className={`mx-auto transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${flat
           ? // Flat: full shell width, transparent — matches shell-container sizing
           'mt-0 mx-3 sm:mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 rounded-none border-0 bg-transparent shadow-none'
-          : // Pill: narrower, centered, white bg, rounded, shadow
-          'mt-2 mx-3 sm:mx-auto sm:mt-3 max-w-4xl px-2 sm:px-3 rounded-full border border-ink/10 bg-white/90 shadow-[0_8px_40px_rgba(17,17,17,0.10)] backdrop-blur-xl'
+          : // Pill: narrower, centered, light bg, rounded, shadow
+          'mt-2 mx-3 sm:mx-auto sm:mt-3 max-w-4xl px-2 sm:px-3 rounded-full border border-black/5 bg-[#FFFFFF]/90 shadow-[0_8px_40px_rgba(26,46,90,0.06)] backdrop-blur-xl'
           }`}
       >
         <nav
@@ -84,22 +84,22 @@ export default function Navbar() {
                   {openGroup === group.key ? (
                     <motion.div
                       animate={{ opacity: 1, y: 0 }}
-                      className="absolute left-0 top-full mt-4 w-[24rem] rounded-[1.8rem] border border-ink/10 bg-canvas p-5 shadow-[0_24px_90px_rgba(17,17,17,0.12)]"
+                      className="absolute left-0 top-full mt-4 w-[24rem] rounded-[1.8rem] border border-black/5 bg-[#FFFFFF] p-5 shadow-[0_24px_90px_rgba(26,46,90,0.1)]"
                       exit={{ opacity: 0, y: 8 }}
                       initial={{ opacity: 0, y: 8 }}
                     >
-                      <div className="mb-4 space-y-2 border-b border-ink/10 pb-4">
+                      <div className="mb-4 space-y-2 border-b border-black/5 pb-4">
                         <p className="eyebrow">{group.label}</p>
                         <p className="text-sm leading-6 text-muted">{group.description}</p>
                       </div>
                       <div className="space-y-2">
                         {group.items.map((item) => (
                           <Link
-                            className="block rounded-2xl border border-transparent px-4 py-3 transition hover:border-ink/10 hover:bg-canvas-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/18"
+                            className="block rounded-2xl border border-transparent px-4 py-3 transition hover:border-black/5 hover:bg-[#EFF1F5] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10"
                             key={item.href}
                             to={item.href}
                           >
-                            <span className="block text-sm font-medium text-ink">{item.label}</span>
+                            <span className="block text-sm font-medium text-[#1A2E5A]">{item.label}</span>
                           </Link>
                         ))}
                       </div>
@@ -143,7 +143,7 @@ export default function Navbar() {
 
             <button
               aria-expanded={isOpen}
-              className={`inline-flex h-8 w-8 md:h-11 md:w-11 flex-shrink-0 items-center justify-center rounded-full border text-ink transition-all duration-500 lg:hidden ${flat ? 'border-ink/20 bg-transparent' : 'border-ink/10 bg-white/52'
+              className={`inline-flex h-8 w-8 md:h-11 md:w-11 flex-shrink-0 items-center justify-center rounded-full border text-[#1A2E5A] transition-all duration-500 lg:hidden ${flat ? 'border-black/10 bg-transparent' : 'border-black/5 bg-[#FFFFFF]/70'
                 }`}
               onClick={() => setIsOpen((value) => !value)}
               type="button"
@@ -163,11 +163,11 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -10 }}
             initial={{ opacity: 0, y: -10 }}
           >
-            <div className="mt-3 rounded-[2rem] border border-ink/12 bg-[linear-gradient(145deg,rgba(17,17,17,0.98),rgba(26,26,26,0.95)_54%,rgba(216,207,194,0.14))] p-5 shadow-[0_20px_80px_rgba(17,17,17,0.18)]">
-              <div className="space-y-2 border-b border-white/10 pb-4">
+            <div className="mt-3 rounded-[2rem] border border-black/5 bg-[linear-gradient(145deg,#FFFFFF,#EFF1F5_70%)] p-5 shadow-[0_20px_80px_rgba(26,46,90,0.08)]">
+              <div className="space-y-2 border-b border-black/10 pb-4">
                 {navLinks.map((link) => (
                   <Link
-                    className="block rounded-2xl px-4 py-3 text-base font-medium text-canvas transition hover:bg-white/6"
+                    className="block rounded-2xl px-4 py-3 text-base font-medium text-[#1A2E5A] transition hover:bg-black/5"
                     key={link.href}
                     to={link.href}
                   >
@@ -181,15 +181,15 @@ export default function Navbar() {
                   const isExpanded = mobileGroup === group.key;
 
                   return (
-                    <div className="rounded-[1.5rem] border border-white/10 bg-white/6" key={group.key}>
+                    <div className="rounded-[1.5rem] border border-black/10 bg-black/4" key={group.key}>
                       <button
                         aria-expanded={isExpanded}
-                        className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left text-sm font-medium text-canvas"
+                        className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left text-sm font-medium text-[#1A2E5A]"
                         onClick={() => setMobileGroup((value) => (value === group.key ? null : group.key))}
                         type="button"
                       >
                         {group.label}
-                        <ChevronDown className={`h-4 w-4 text-canvas/68 transition ${isExpanded ? 'rotate-180' : ''}`} />
+                        <ChevronDown className={`h-4 w-4 text-[#64748B] transition ${isExpanded ? 'rotate-180' : ''}`} />
                       </button>
 
                       <AnimatePresence initial={false}>
@@ -200,14 +200,14 @@ export default function Navbar() {
                             exit={{ height: 0, opacity: 0 }}
                             initial={{ height: 0, opacity: 0 }}
                           >
-                            <div className="space-y-2 border-t border-white/10 px-4 py-4">
+                            <div className="space-y-2 border-t border-black/10 px-4 py-4">
                               {group.items.map((item) => (
                                 <Link
-                                  className="block rounded-2xl bg-white/8 px-4 py-3 text-sm text-canvas/70 transition hover:bg-white/12 hover:text-canvas"
+                                  className="block rounded-2xl bg-black/4 px-4 py-3 text-sm text-[#475569] transition hover:bg-[#EFF1F5] hover:text-[#1A2E5A]"
                                   key={item.href}
                                   to={item.href}
                                 >
-                                  <span className="block font-medium text-canvas">{item.label}</span>
+                                  <span className="block font-medium text-[#1A2E5A]">{item.label}</span>
                                 </Link>
                               ))}
                             </div>
@@ -219,7 +219,7 @@ export default function Navbar() {
                 })}
               </div>
 
-              <Link className="button-primary-inverse mt-5 flex w-full" to="/contact">
+              <Link className="button-primary mt-5 flex w-full" to="/contact">
                 Start a Project
               </Link>
             </div>

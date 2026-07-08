@@ -86,7 +86,7 @@ export default function MetricsStrip({ metrics }: MetricsStripProps) {
     >
       {metrics.map((metric) => {
         const content = (
-          <div className="surface-card h-full min-h-56 space-y-5 transition duration-300 group-hover:-translate-y-1 group-hover:border-ink/18 group-hover:bg-white/60">
+          <div className="surface-card h-full min-h-56 space-y-5 transition duration-300 group-hover:-translate-y-1 group-hover:border-gold/30 group-hover:bg-white">
             <div className="text-4xl font-semibold tracking-[-0.05em] text-ink md:text-5xl">
               <CountUpValue active={active} metric={metric} />
             </div>

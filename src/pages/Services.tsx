@@ -36,7 +36,7 @@ export default function Services() {
 
             return (
               <section
-                className="grid gap-6 rounded-[2rem] border border-ink/10 bg-white/42 p-6 shadow-[0_26px_80px_rgba(17,17,17,0.08)] md:p-8 lg:grid-cols-[1fr_0.9fr]"
+                className="grid gap-6 rounded-[2rem] border border-black/5 bg-[#FFFFFF]/75 backdrop-blur-md p-6 shadow-[0_16px_48px_rgba(26,46,90,0.06)] md:p-8 lg:grid-cols-[1fr_0.9fr]"
                 id={service.id}
                 key={service.id}
               >
@@ -112,7 +112,7 @@ export default function Services() {
             <div className="grid gap-4">
               {processSteps.map((step, index) => (
                 <div className="surface-card flex gap-5" key={step.title}>
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-ink/10 bg-ink text-sm font-semibold text-canvas">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-black/5 bg-[#1A2E5A] text-sm font-semibold text-white">
                     {index + 1}
                   </div>
                   <div>

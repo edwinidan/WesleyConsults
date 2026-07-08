@@ -41,7 +41,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-ink/10 bg-white/46 p-6 shadow-[0_24px_70px_rgba(17,17,17,0.08)] md:p-8">
+            <div className="rounded-[2rem] border border-black/5 bg-[#FFFFFF]/75 backdrop-blur-md p-6 shadow-[0_16px_48px_rgba(26,46,90,0.06)] md:p-8">
               <form className="space-y-6">
                 <div className="grid gap-5 md:grid-cols-2">
                   <div>
@@ -106,7 +106,7 @@ export default function Contact() {
                 </button>
               </form>
 
-              <div className="mt-6 rounded-[1.4rem] border border-ink/10 bg-surface/68 px-5 py-4 text-sm leading-7 text-ink/74">
+              <div className="mt-6 rounded-[1.4rem] border border-black/5 bg-[#EFF1F5] px-5 py-4 text-sm leading-7 text-[#475569]">
                 Prefer direct contact? Email{' '}
                 <a className="font-medium text-ink" href="mailto:wesleyconsults@gmail.com">
                   wesleyconsults@gmail.com

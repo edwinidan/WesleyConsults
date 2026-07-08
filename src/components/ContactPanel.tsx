@@ -19,7 +19,7 @@ export default function ContactPanel({ methods }: ContactPanelProps) {
       {methods.map((method) =>
         method.href ? (
           <a
-            className="surface-card block transition duration-300 hover:border-ink/18 hover:bg-white/58"
+            className="surface-card block transition duration-300 hover:border-gold/30 hover:bg-white"
             href={method.href}
             key={method.id}
             rel={method.href.startsWith('http') ? 'noreferrer' : undefined}
@@ -40,7 +40,7 @@ export default function ContactPanel({ methods }: ContactPanelProps) {
           </a>
         ) : (
           <div
-            className="surface-card block transition duration-300 hover:border-ink/18 hover:bg-white/58"
+            className="surface-card block transition duration-300 hover:border-gold/30 hover:bg-white"
             key={method.id}
           >
             <div className="flex items-start justify-between gap-4">

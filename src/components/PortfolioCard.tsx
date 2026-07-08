@@ -10,16 +10,16 @@ interface PortfolioCardProps {
 
 export default function PortfolioCard({ study, featured = false }: PortfolioCardProps) {
   const surfaceStyle = caseStudySurfaceStyles[study.surfaceStyle];
-  const divider = study.surfaceStyle === 'ink-feature' ? 'border-white/10' : study.surfaceStyle === 'green-feature' ? 'border-[#5a9b5a]/18' : study.surfaceStyle === 'wine-feature' ? 'border-[#7B1E2E]/18' : 'border-ink/10';
+  const divider = 'border-black/5';
 
   return (
     <Link
-      className={`group flex h-full flex-col overflow-hidden rounded-[1.8rem] border transition duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/18 ${surfaceStyle.card} ${featured ? 'lg:min-h-[34rem]' : ''}`}
+      className={`group flex h-full flex-col overflow-hidden rounded-[1.8rem] border transition duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/10 ${surfaceStyle.card} ${featured ? 'lg:min-h-[34rem]' : ''}`}
       to={study.href}
     >
       <div
         className={`relative overflow-hidden border-b ${divider} ${featured ? 'min-h-[18rem] md:min-h-[22rem]' : 'min-h-[14rem]'}`}
-        style={{ backgroundImage: study.image ? undefined : surfaceStyle.hero }}
+        style={{ background: study.image ? undefined : surfaceStyle.hero }}
       >
         {study.image && (
           <img

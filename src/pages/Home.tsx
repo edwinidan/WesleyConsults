@@ -85,10 +85,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-space bg-ink pt-10">
+      <section className="section-space bg-[#0F1D3B] pt-10">
         <div className="shell-container">
           <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div className="[&_h2]:text-canvas [&_.eyebrow]:text-canvas/64 [&_p]:text-canvas/70">
+            <div className="[&_h2]:text-white [&_.eyebrow]:text-white/64 [&_p]:text-white/70">
               <SectionHeading
                 eyebrow="Selected Work"
                 title="Real projects. Real results."

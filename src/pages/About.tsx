@@ -74,7 +74,7 @@ export default function About() {
             <div className="space-y-4">
               {processSteps.map((step, index) => (
                 <div className="surface-card flex gap-5" key={step.title}>
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ink/10 bg-ink text-sm font-semibold text-canvas">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-black/5 bg-[#1A2E5A] text-sm font-semibold text-white">
                     {index + 1}
                   </div>
                   <div>
@@ -90,15 +90,15 @@ export default function About() {
 
       <section className="section-space pt-6">
         <div className="shell-container">
-          <div className="rounded-[2rem] border border-ink/12 bg-[linear-gradient(140deg,rgba(17,17,17,0.98),rgba(26,26,26,0.96)_46%,rgba(216,207,194,0.18))] p-8 md:p-12">
+          <div className="rounded-[2rem] border border-white/10 bg-[#1A2E5A] p-8 md:p-12">
             <div className="grid gap-8 lg:grid-cols-[0.72fr_1fr] lg:items-end">
               <div className="space-y-3">
-                <span className="eyebrow text-canvas/62">Leadership Note</span>
-                <h2 className="text-4xl font-semibold tracking-[-0.05em] text-canvas md:text-5xl">
+                <span className="eyebrow text-white/62">Leadership Note</span>
+                <h2 className="text-4xl font-semibold tracking-[-0.05em] text-white md:text-5xl">
                   The goal is simple: build digital experiences that make good businesses feel harder to ignore.
                 </h2>
               </div>
-              <p className="text-base leading-8 text-canvas/70 md:text-lg">
+              <p className="text-base leading-8 text-[#B8C2D8]/70 md:text-lg">
                 Wesley Consults is positioning itself as a sharper digital partner for modern businesses, with an eventual AI advisory layer built around useful implementation rather than trend-chasing. The immediate focus remains premium websites, e-commerce, and showcase experiences that create measurable leverage.
               </p>
             </div>

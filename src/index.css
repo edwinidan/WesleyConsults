@@ -5,17 +5,17 @@
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 
-  --color-canvas: #f5f1e8;
-  --color-canvas-alt: #efe9dd;
-  --color-surface: #d8cfc2;
-  --color-ink: #111111;
-  --color-ink-soft: #1a1a1a;
-  --color-muted: #8c8c8c;
+  --color-canvas: #F8F9FC;
+  --color-canvas-alt: #EFF1F5;
+  --color-surface: #FFFFFF;
+  --color-ink: #1A2E5A;
+  --color-ink-soft: #475569;
+  --color-muted: #64748B;
   --color-white: #ffffff;
-  --color-border: rgba(17, 17, 17, 0.1);
-  --color-border-strong: rgba(17, 17, 17, 0.18);
+  --color-border: rgba(26, 46, 90, 0.08);
+  --color-border-strong: rgba(26, 46, 90, 0.16);
 
-  /* Gold accent from logo */
+  /* Gold accents from original brand */
   --color-gold: #b8963e;
   --color-gold-light: #d4af6a;
   --color-gold-dark: #8a6e2a;
@@ -33,10 +33,7 @@ html {
 body {
   min-height: 100vh;
   font-family: var(--font-sans);
-  background:
-    radial-gradient(circle at top right, rgba(184, 150, 62, 0.12), transparent 28%),
-    radial-gradient(circle at 12% 18%, rgba(17, 17, 17, 0.045), transparent 22%),
-    linear-gradient(180deg, #f5f1e8 0%, #f1eadf 54%, #efe9dd 100%);
+  background: #F8F9FC;
   color: var(--color-ink);
   @apply antialiased;
 }
@@ -47,16 +44,16 @@ body::before {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(17, 17, 17, 0.024) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 17, 17, 0.024) 1px, transparent 1px);
+    linear-gradient(rgba(26, 46, 90, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 46, 90, 0.015) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at center, black, transparent 88%);
-  opacity: 0.38;
+  opacity: 0.6;
   z-index: -1;
 }
 
 ::selection {
-  background: rgba(216, 207, 194, 0.95);
+  background: rgba(184, 150, 62, 0.2);
   color: var(--color-ink);
 }
 
@@ -105,8 +102,8 @@ h6 {
 }
 
 .surface-card {
-  @apply rounded-[1.6rem] border border-ink/10 bg-[rgba(255,255,255,0.44)] p-6 md:p-7;
-  box-shadow: 0 22px 60px rgba(17, 17, 17, 0.08);
+  @apply rounded-[1.6rem] border border-black/5 bg-[#FFFFFF]/75 backdrop-blur-md p-6 md:p-7;
+  box-shadow: 0 16px 48px rgba(26, 46, 90, 0.06);
 }
 
 .eyebrow {
@@ -118,18 +115,20 @@ h6 {
   .button-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2;
     background: var(--color-gold);
-    box-shadow: 0 16px 34px rgba(184, 150, 62, 0.25);
+    box-shadow: 0 8px 20px rgba(26, 46, 90, 0.08);
   }
+
   .button-primary:hover {
     background: var(--color-gold-dark);
+    box-shadow: 0 12px 24px rgba(26, 46, 90, 0.12);
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/12 bg-surface/75 px-6 py-3.5 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-ink/20 hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/22;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-black/8 bg-white/70 px-6 py-3.5 text-sm font-semibold text-[#1A2E5A] transition duration-300 hover:-translate-y-0.5 hover:border-black/16 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/12;
   }
 
   .button-primary-inverse {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-canvas px-6 py-3.5 text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[#1A2E5A] transition duration-300 hover:-translate-y-0.5 hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30;
   }
 
   .button-secondary-inverse {
@@ -139,16 +138,16 @@ h6 {
 
 .ambient-grid {
   background-image:
-    linear-gradient(rgba(17, 17, 17, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 17, 17, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(26, 46, 90, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 46, 90, 0.015) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 90%);
 }
 
 .form-input {
-  @apply w-full rounded-2xl border border-ink/10 bg-white/65 px-4 py-3.5 text-sm text-ink outline-none transition placeholder:text-muted/80 focus:border-ink/22 focus:bg-white focus:ring-2 focus:ring-ink/15;
+  @apply w-full rounded-2xl border border-black/8 bg-white/60 px-4 py-3.5 text-sm text-[#1A2E5A] outline-none transition placeholder:text-muted/60 focus:border-gold-light/40 focus:bg-white focus:ring-2 focus:ring-gold/15;
 }
 
 .form-label {
-  @apply mb-2 block text-sm font-medium text-ink/74;
+  @apply mb-2 block text-sm font-medium text-[#1A2E5A]/80;
 }
