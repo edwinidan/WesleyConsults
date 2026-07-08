@@ -86,7 +86,7 @@ export const brandMarks = [
   'Uncolonized Society',
   'What Is My Temperament',
   'SignalStack',
-  'Studio Forma',
+  'CalendersGH',
 ];
 
 export const navLinks = [
@@ -270,14 +270,14 @@ export const caseStudies: CaseStudy[] = [
     surfaceStyle: 'wine-feature',
   },
   {
-    id: 'forma',
-    title: 'Studio Forma',
-    category: 'Portfolio Experience',
-    client: 'Forma',
-    summary: 'A showcase-led portfolio for a design studio that needed stronger pacing, contrast, and work presentation.',
-    impact: '67% increase in direct enquiry rate from target-fit prospects.',
-    href: '/work',
-    tags: ['Portfolio Strategy', 'Motion', 'Responsive Build'],
+    id: 'calendersgh',
+    title: 'CalendersGH',
+    category: 'Lounge & Events Website',
+    client: 'Calenders Events Bar & Lounge',
+    summary: 'A vibrant garden-style restaurant, lounge, and events venue website in Takoradi, designed to showcase weekly entertainment lineups and convert visitors into event bookings.',
+    impact: 'Delivered a premium online presence highlighting live entertainment, events, and dining in Takoradi.',
+    href: 'https://www.calendersgh.com/',
+    tags: ['Restaurant & Lounge', 'Events Venue', 'Brand Experience'],
     surfaceStyle: 'cream-feature',
   },
   {
