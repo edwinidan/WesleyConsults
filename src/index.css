@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
 
   --color-canvas: #F8F9FC;
   --color-canvas-alt: #EFF1F5;
@@ -102,7 +102,7 @@ h6 {
 }
 
 .surface-card {
-  @apply rounded-[1.6rem] border border-black/5 bg-[#FFFFFF]/75 backdrop-blur-md p-6 md:p-7;
+  @apply rounded-[1.15rem] border border-black/5 bg-[#FFFFFF]/85 p-6 md:p-7;
   box-shadow: 0 16px 48px rgba(26, 46, 90, 0.06);
 }
 

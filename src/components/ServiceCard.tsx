@@ -16,9 +16,6 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       to={`/services#${service.id}`}
     >
       <div className="space-y-5">
-        <div className={`flex h-14 w-14 items-center justify-center rounded-2xl border ${toneStyle.icon}`}>
-          <span className="h-2.5 w-2.5 rounded-full bg-current" />
-        </div>
         <div className="space-y-3">
           <p className="eyebrow">{service.shortTitle}</p>
           <h3 className="text-2xl font-semibold tracking-[-0.03em] text-ink">
@@ -29,7 +26,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       </div>
 
       <div className="mt-8 flex items-center justify-between border-t border-black/5 pt-5">
-        <span className="text-sm font-medium text-muted">{service.timeline}</span>
+        <span className="text-sm text-muted">{service.timeline}</span>
         <span className={`inline-flex items-center gap-2 text-sm font-medium ${toneStyle.link}`}>
           Explore service <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </span>

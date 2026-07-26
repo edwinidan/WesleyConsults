@@ -10,9 +10,9 @@ export default function Services() {
       <section className="pb-12 pt-4 md:pt-6">
         <div className="shell-container">
           <SectionHeading
-            description="The service mix stays focused: business websites, e-commerce platforms, portfolio experiences, and a coming-soon AI advisory layer for practical implementation planning."
+            description="Three focused service areas, each supported by work already designed, built, and released."
             eyebrow="Services"
-            title="A premium digital offer built around clarity, trust, and commercial intent."
+            title="Websites, applications, and digital products built around real needs."
           />
 
           <div className="mt-10 flex flex-wrap gap-3">
@@ -36,7 +36,7 @@ export default function Services() {
 
             return (
               <section
-                className="grid gap-6 rounded-[2rem] border border-black/5 bg-[#FFFFFF]/75 backdrop-blur-md p-6 shadow-[0_16px_48px_rgba(26,46,90,0.06)] md:p-8 lg:grid-cols-[1fr_0.9fr]"
+                className="grid gap-6 rounded-[1.25rem] border border-black/5 bg-[#FFFFFF]/85 p-6 shadow-[0_16px_48px_rgba(26,46,90,0.06)] md:p-8 lg:grid-cols-[1fr_0.9fr]"
                 id={service.id}
                 key={service.id}
               >
@@ -72,16 +72,14 @@ export default function Services() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className={`min-h-64 rounded-[1.75rem] border ${toneStyle.panel}`}>
-                    <div className="ambient-grid h-full rounded-[1.75rem] p-6">
-                      <div className="flex h-full flex-col justify-between">
-                        <div className={`w-fit rounded-full border px-3 py-1 text-xs uppercase tracking-[0.24em] ${toneStyle.badge}`}>
-                          {service.shortTitle}
-                        </div>
-                        <p className={`max-w-sm text-sm leading-7 ${toneStyle.body}`}>
-                          {service.summary}
-                        </p>
+                  <div className={`min-h-64 rounded-[1.15rem] border p-6 ${toneStyle.panel}`}>
+                    <div className="flex h-full flex-col justify-between">
+                      <div className={`w-fit rounded-full border px-3 py-1 text-xs uppercase tracking-[0.18em] ${toneStyle.badge}`}>
+                        {service.shortTitle}
                       </div>
+                      <p className={`max-w-sm text-sm leading-7 ${toneStyle.body}`}>
+                        {service.summary}
+                      </p>
                     </div>
                   </div>
                   <div className="grid gap-4 md:grid-cols-2">

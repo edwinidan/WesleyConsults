@@ -41,6 +41,21 @@ export interface CaseStudy {
   imageContain?: boolean;
 }
 
+export type MobileAppTheme = 'forest' | 'navy';
+
+export interface MobileApp {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  image: string;
+  features: string[];
+  tags: string[];
+  appStoreUrl: string;
+  playStoreUrl: string;
+  theme: MobileAppTheme;
+}
+
 export interface StatMetric {
   id: string;
   label: string;
@@ -68,12 +83,6 @@ export interface FaqItem {
   answer: string;
 }
 
-export interface SectorItem {
-  id: string;
-  title: string;
-  description: string;
-}
-
 export interface ContactMethod {
   id: string;
   label: string;
@@ -85,8 +94,10 @@ export interface ContactMethod {
 export const brandMarks = [
   'Uncolonized Society',
   'What Is My Temperament',
-  'SignalStack',
   'CalendersGH',
+  'ARATTC',
+  'Adinkra Tiles',
+  'UniMate GH',
 ];
 
 export const navLinks = [
@@ -95,116 +106,44 @@ export const navLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
-export const sectors: SectorItem[] = [
-  {
-    id: 'technology',
-    title: 'Technology',
-    description: 'We help tech businesses explain what they do in plain English — so the right customers actually get it.',
-  },
-  {
-    id: 'saas',
-    title: 'SaaS',
-    description: 'Better sign-up flows, clearer product pages, and more trials turning into paying customers.',
-  },
-  {
-    id: 'ecommerce',
-    title: 'E-commerce',
-    description: 'Beautiful online shops that build trust and keep shoppers coming back for more.',
-  },
-  {
-    id: 'finance',
-    title: 'Finance',
-    description: 'Professional, trustworthy websites for financial businesses that still need to attract new clients.',
-  },
-  {
-    id: 'health',
-    title: 'Health',
-    description: 'Clear, easy-to-navigate websites for health businesses where trust is everything.',
-  },
-  {
-    id: 'professional-services',
-    title: 'Professional Services',
-    description: 'Websites that show you\'re the expert — and make it easy for clients to choose you.',
-  },
-];
-
 export const services: ServiceItem[] = [
   {
     id: 'business-websites',
-    title: 'Business Websites',
+    title: 'Website Design & Development',
     shortTitle: 'Websites',
-    summary: 'A clean, professional website that makes your business look the part and turns visitors into paying customers.',
+    summary: 'Clear, responsive websites that help organisations explain their work, build trust, and turn interest into action.',
     description:
-      'We build websites that are easy to navigate, fast to load, and make a great first impression. Whether you\'re a local shop or a growing service business, we make sure your site works hard for you.',
-    outcomes: ['Look more professional online', 'Get more enquiries from your site', 'Loads fast on any device', 'Makes it easy for customers to reach you'],
-    deliverables: ['Clear messaging', 'Custom design', 'Mobile-friendly build', 'Google-ready structure', 'Launch support'],
+      'We plan, design, and build websites around what visitors need to understand and do. That can include a focused business site, a nonprofit with a large body of work, an events venue, or an online shop.',
+    outcomes: ['A clearer public presence', 'Simple paths to enquiries or bookings', 'Fast, responsive pages', 'Content that is easier to understand'],
+    deliverables: ['Content structure', 'Custom interface design', 'Responsive development', 'Search-ready foundations', 'Launch support'],
     timeline: '6 to 10 weeks',
-    audience: 'Local businesses, consultants, and service providers who want a website that actually works.',
-    tone: 'charcoal',
-  },
-  {
-    id: 'ecommerce-platforms',
-    title: 'E-commerce Platforms',
-    shortTitle: 'E-commerce',
-    summary: 'An online shop that\'s easy to use, looks great, and gets customers all the way to checkout.',
-    description:
-      'We design your online store so shoppers can find what they want quickly and buy with confidence. Less frustration for your customers means more sales for you.',
-    outcomes: ['More completed purchases', 'Easier product browsing', 'Smooth checkout on mobile', 'Looks trustworthy to new buyers'],
-    deliverables: ['Shop design', 'Product page setup', 'Category layout', 'Checkout improvements', 'Sales tracking'],
-    timeline: '8 to 12 weeks',
-    audience: 'Small businesses and retailers ready to sell more online.',
-    tone: 'taupe',
-  },
-  {
-    id: 'portfolio-brand-experiences',
-    title: 'Portfolio & Brand Experiences',
-    shortTitle: 'Portfolio',
-    summary: 'A website that shows off your best work and makes people remember your name.',
-    description:
-      'When your reputation is everything, your website needs to reflect that. We build portfolio sites that tell your story clearly and make a strong impression on the right people.',
-    outcomes: ['Stand out from competitors', 'Make a stronger first impression', 'Tell your story better', 'Look like the go-to expert in your field'],
-    deliverables: ['Page layout and structure', 'Case study templates', 'Subtle animations', 'Eye-catching visuals', 'Content tips'],
-    timeline: '5 to 9 weeks',
-    audience: 'Freelancers, agencies, studios, and founders who want their online presence to match their real-world reputation.',
-    tone: 'cream',
-  },
-  {
-    id: 'ai-advisory',
-    title: 'AI Advisory',
-    shortTitle: 'AI Advisory',
-    summary: 'Simple, honest advice on where AI can save your business time and money — without the confusing tech talk.',
-    description:
-      'Not sure where to start with AI? We help you figure out which tools are actually worth it for your business and which ones to skip. No hype, no confusion — just practical next steps.',
-    outcomes: ['A clear AI plan that makes sense', 'Find quick wins for your business', 'Avoid wasting money on the wrong tools', 'Know exactly what to do next'],
-    deliverables: ['Needs assessment', 'Opportunity breakdown', 'Action plan', 'Tool recommendations', 'Pilot suggestions'],
-    timeline: '3 to 6 weeks',
-    audience: 'Business owners curious about AI but not sure where to begin.',
+    audience: 'Businesses, nonprofits, venues, retailers, and service organisations that need a credible website.',
     tone: 'charcoal',
   },
   {
     id: 'mobile-development',
-    title: 'Mobile Development',
+    title: 'Mobile App Development',
     shortTitle: 'Mobile Apps',
-    summary: 'A mobile app that works beautifully on iPhone and Android — built for your customers.',
+    summary: 'Purpose-built iPhone and Android applications taken from product thinking through to store release.',
     description:
-      'We design and build apps that are fast, easy to use, and keep people coming back. Whether it\'s for your customers or your team, we make it feel smooth and reliable.',
-    outcomes: ['Customers keep coming back', 'App feels fast and smooth', 'Works on iPhone and Android', 'Reliable even without internet'],
-    deliverables: ['iPhone & Android app', 'Design & user experience', 'System integrations', 'App store launch', 'Ongoing support plan'],
+      'We design and build mobile products for real routines—from academic planning to culturally grounded games. The work covers product structure, interface design, application development, integrations, and release preparation.',
+    outcomes: ['A focused product experience', 'Consistent iPhone and Android delivery', 'Reliable app behaviour', 'A clear path to public release'],
+    deliverables: ['Product planning', 'Interface design', 'Cross-platform development', 'System integrations', 'App store release support'],
     timeline: '10 to 16 weeks',
-    audience: 'Businesses ready to give their customers a better experience on their phones.',
+    audience: 'Founders and organisations with a useful mobile product idea and a defined audience.',
     tone: 'taupe',
   },
   {
     id: 'web-applications',
-    title: 'Web Applications',
+    title: 'Web Applications & Digital Products',
     shortTitle: 'Web Apps',
-    summary: 'A custom tool built for your business — so your team can stop working around broken systems.',
+    summary: 'Interactive tools and tailored digital products built around a specific user journey or business need.',
     description:
-      'We build web-based software that fits the way your business actually works. Think booking systems, client portals, or custom dashboards — anything that saves your team time and reduces mistakes.',
-    outcomes: ['Your team works faster', 'Scales as your business grows', 'Data is safe and organised', 'Works on any device, anywhere'],
-    deliverables: ['Full build from scratch', 'System design', 'Data storage setup', 'User access controls', 'Testing and quality checks'],
-    timeline: '12 to 20 weeks',
-    audience: 'Businesses that need custom software and are done trying to make generic tools work.',
+      'When a normal website is not enough, we build focused web-based products such as assessments, portals, booking experiences, dashboards, and AI-assisted workflows. AI is used where it improves the product—not as a label added for effect.',
+    outcomes: ['A simpler user journey', 'Less manual work', 'A product shaped around real requirements', 'Room to improve and extend over time'],
+    deliverables: ['Product definition', 'UX and interface design', 'Application development', 'Data and service integrations', 'Testing and launch'],
+    timeline: '10 to 18 weeks',
+    audience: 'Organisations and founders that need software tailored to how their users or teams actually work.',
     tone: 'cream',
   },
 ];
@@ -213,22 +152,49 @@ export const navGroups: NavGroup[] = [
   {
     key: 'services',
     label: 'Services',
-    description: 'Simple, practical services that help your business look great and grow online.',
+    description: 'Focused digital services backed by work already designed, built, and released.',
     items: services.map((service) => ({
       label: service.shortTitle,
       description: service.summary,
       href: `/services#${service.id}`,
     })),
   },
+];
+
+export const mobileApps: MobileApp[] = [
   {
-    key: 'sectors',
-    label: 'Sectors',
-    description: 'Industries we\'ve helped — and we probably know yours too.',
-    items: sectors.map((sector) => ({
-      label: sector.title,
-      description: sector.description,
-      href: `/about#${sector.id}`,
-    })),
+    id: 'adinkra-tiles',
+    name: 'Adinkra Tiles',
+    category: 'Cultural puzzle game',
+    description:
+      'A calming Mahjong solitaire experience that turns Ghanaian Adinkra symbols into a thoughtful, timer-free journey through culture, strategy, and discovery.',
+    image: '/adinkra-tiles-icon.jpg',
+    features: [
+      '200 handcrafted and procedural levels',
+      '90+ collectible Adinkra symbols and meanings',
+      'Progression, rewards, boosters, and daily gifts',
+    ],
+    tags: ['Flutter', 'Mobile Game', 'iOS & Android'],
+    appStoreUrl: 'https://apps.apple.com/gh/app/adinkra-tiles/id6787963659',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.sankofatiles.sankofa_tiles',
+    theme: 'forest',
+  },
+  {
+    id: 'unimate-gh',
+    name: 'UniMate GH',
+    category: 'Academic productivity',
+    description:
+      'An academic companion designed for Ghanaian university students to plan semesters, understand their results, manage timetables, and study with more direction.',
+    image: '/unimate-gh-icon.jpg',
+    features: [
+      'CWA, GPA, and CGPA planning',
+      'Timetable, course, and reminder management',
+      'AI-assisted imports, study plans, and reviews',
+    ],
+    tags: ['Flutter', 'Education', 'AI-assisted'],
+    appStoreUrl: 'https://apps.apple.com/gh/app/unimate-gh/id6787149834',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.wesleyconsults.campusiq',
+    theme: 'navy',
   },
 ];
 
@@ -259,77 +225,32 @@ export const caseStudies: CaseStudy[] = [
     image: 'https://uncolonized-society-ha8d.vercel.app/images/brand/hero.jpeg',
   },
   {
-    id: 'ember-vine',
-    title: 'Ember & Vine',
-    category: 'Restaurant Website',
-    client: 'Ember & Vine',
-    summary: 'An upscale dining website for a premium restaurant, designed to reflect the warmth and refinement of the brand and convert visitors into reservations.',
-    impact: 'Delivered a polished digital presence that matches the quality of the in-person dining experience.',
-    href: 'https://ember-vine.vercel.app/',
-    tags: ['Restaurant', 'Hospitality', 'Brand Experience'],
-    surfaceStyle: 'wine-feature',
+    id: 'arattc',
+    title: 'ARATTC',
+    category: 'Nonprofit Website',
+    client: 'Aboadi Rural Agricultural Technology Centre',
+    summary: 'A structured organisational website that brings ARATTC’s training, agricultural consultancy, community projects, research, and partnerships into one clear public platform.',
+    impact: 'Made programmes, project evidence, impact figures, and training requests easier for communities and potential partners to find.',
+    href: 'https://arattc.org/',
+    tags: ['Nonprofit', 'Agriculture', 'Content Architecture'],
+    surfaceStyle: 'green-feature',
+    image: '/arattc-community.webp',
   },
   {
     id: 'calendersgh',
     title: 'CalendersGH',
     category: 'Lounge & Events Website',
     client: 'Calenders Events Bar & Lounge',
-    summary: 'A vibrant garden-style restaurant, lounge, and events venue website in Takoradi, designed to showcase weekly entertainment lineups and convert visitors into event bookings.',
-    impact: 'Delivered a premium online presence highlighting live entertainment, events, and dining in Takoradi.',
+    summary: 'A lively hospitality website that brings CalendersGH’s garden-style dining, weekly entertainment, venue imagery, opening hours, and event booking journey together.',
+    impact: 'Turned the venue’s established reputation—150+ events, five years in business, and a 5.0 Google rating—into a clear digital destination.',
     href: 'https://www.calendersgh.com/',
-    tags: ['Restaurant & Lounge', 'Events Venue', 'Brand Experience'],
+    tags: ['Restaurant & Lounge', 'Events Venue', 'Bookings'],
     surfaceStyle: 'cream-feature',
-  },
-  {
-    id: 'signalstack',
-    title: 'SignalStack',
-    category: 'SaaS Marketing Site',
-    client: 'SignalStack',
-    summary: 'A fast, focused marketing site for a technical product that needed sharper product communication.',
-    impact: '26% increase in product-qualified pipeline sourced from the website.',
-    href: '/work',
-    tags: ['SaaS', 'Storytelling', 'Performance'],
-    surfaceStyle: 'taupe-feature',
+    image: '/calenders-seating.jpeg',
   },
 ];
 
 export const featuredCaseStudy = caseStudies[0];
-
-export const metrics: StatMetric[] = [
-  {
-    id: 'qualified-leads',
-    label: 'Increase in qualified enquiries',
-    detail: 'For a B2B infrastructure client after a full messaging and website overhaul.',
-    value: 42,
-    suffix: '%',
-    href: '/work',
-  },
-  {
-    id: 'order-value',
-    label: 'Increase in average order value',
-    detail: 'Driven by a cleaner premium storefront and sharper product storytelling.',
-    value: 18,
-    suffix: '%',
-    href: '/work',
-  },
-  {
-    id: 'engagement-time',
-    label: 'More time on strategic pages',
-    detail: 'A finance client saw longer sessions on the pages that matter to high-intent buyers.',
-    value: 2.6,
-    suffix: 'x',
-    decimals: 1,
-    href: '/work',
-  },
-  {
-    id: 'launch-speed',
-    label: 'Average launch sprint for focused site builds',
-    detail: 'A tighter delivery model for teams that need premium execution without unnecessary drag.',
-    value: 8,
-    suffix: ' weeks',
-    href: '/contact',
-  },
-];
 
 export const insights: InsightArticle[] = [
   {
@@ -436,9 +357,9 @@ export const serviceFaqs: FaqItem[] = [
   },
   {
     id: 'ai',
-    question: 'Is the AI advisory service available now?',
+    question: 'Can AI be included in a digital product?',
     answer:
-      'Not quite yet. It\'s coming soon for business owners who want practical help using AI tools — without the jargon or confusing tech talk.',
+      'Yes, when it serves a clear purpose. We can integrate AI-assisted workflows such as structured imports, planning, summaries, or guided analysis as part of a wider web or mobile product.',
   },
 ];
 

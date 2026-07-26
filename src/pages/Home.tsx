@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection';
 
 import Layout from '../components/Layout';
+import MobileAppTeaserCard from '../components/MobileAppTeaserCard';
 import PortfolioCard from '../components/PortfolioCard';
 import SectionHeading from '../components/SectionHeading';
 import ServiceCard from '../components/ServiceCard';
-import TrustedByRail from '../components/TrustedByRail';
 import {
-  brandMarks,
   caseStudies,
+  mobileApps,
   services,
 } from '../content/siteContent';
 
@@ -23,11 +23,11 @@ export default function Home() {
             <div className="space-y-7">
               <motion.h1
                 animate={{ opacity: 1, y: 0 }}
-                className="max-w-4xl text-6xl font-semibold tracking-[-0.07em] text-ink sm:text-7xl lg:text-[5.6rem]"
+                className="max-w-4xl text-6xl font-semibold tracking-[-0.04em] text-ink sm:text-7xl lg:text-[5.4rem]"
                 initial={{ opacity: 0, y: 18 }}
                 transition={{ delay: 0.05, duration: 0.5 }}
               >
-                Strategic websites that feel more expensive before you say a word.
+                Websites and apps that make your work easier to trust—and easier to use.
               </motion.h1>
               <motion.p
                 animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 18 }}
                 transition={{ delay: 0.12, duration: 0.5 }}
               >
-                We help growing businesses sharpen their positioning, redesign the digital experience, and launch sites that create clearer trust, stronger conversion, and better first impressions.
+                Wesley Consults designs and builds clear websites, web applications, and mobile products for businesses and organisations ready to improve how they work online.
               </motion.p>
               <motion.div
                 animate={{ opacity: 1, y: 0 }}
@@ -65,22 +65,20 @@ export default function Home() {
           <div className="mb-12">
             <SectionHeading
               eyebrow="Services"
-              title="We help your business grow online — and we go the extra mile to make it happen."
+              title="Focused digital services, backed by work already delivered."
             />
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, index) => (
-              <div key={service.id} className={index === services.length - 1 ? 'flex flex-col' : ''}>
+            {services.map((service) => (
+              <div key={service.id}>
                 <ServiceCard service={service} />
-                {index === services.length - 1 && (
-                  <div className="mt-4">
-                    <Link className="button-secondary" to="/services">
-                      View All Services <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
-                )}
               </div>
             ))}
+          </div>
+          <div className="mt-7">
+            <Link className="button-secondary" to="/services">
+              View All Services <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
@@ -90,8 +88,9 @@ export default function Home() {
           <div className="mb-12 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="[&_h2]:text-white [&_.eyebrow]:text-white/64 [&_p]:text-white/70">
               <SectionHeading
+                description="A selection of live websites, web products, and mobile applications."
                 eyebrow="Selected Work"
-                title="Real projects. Real results."
+                title="Real projects, built for real use."
               />
             </div>
             <Link className="button-secondary-inverse" to="/work">
@@ -107,6 +106,13 @@ export default function Home() {
             <PortfolioCard study={caseStudies[2]} />
             <div className="lg:col-span-2">
               <PortfolioCard study={caseStudies[3]} />
+            </div>
+            <div className="grid gap-5 lg:col-span-3 lg:grid-cols-2">
+              {mobileApps.map((app) => (
+                <div key={app.id}>
+                  <MobileAppTeaserCard app={app} />
+                </div>
+              ))}
             </div>
           </div>
         </div>
