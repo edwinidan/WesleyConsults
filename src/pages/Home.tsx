@@ -100,20 +100,17 @@ export default function Home() {
 
           <div className="grid gap-5 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <PortfolioCard featured study={caseStudies[0]} />
+              <MobileAppTeaserCard app={mobileApps[0]} />
             </div>
+            <PortfolioCard study={caseStudies[0]} />
             <PortfolioCard study={caseStudies[1]} />
-            <PortfolioCard study={caseStudies[2]} />
+            <div className="lg:col-span-2">
+              <PortfolioCard study={caseStudies[2]} />
+            </div>
             <div className="lg:col-span-2">
               <PortfolioCard study={caseStudies[3]} />
             </div>
-            <div className="grid gap-5 lg:col-span-3 lg:grid-cols-2">
-              {mobileApps.map((app) => (
-                <div key={app.id}>
-                  <MobileAppTeaserCard app={app} />
-                </div>
-              ))}
-            </div>
+            <MobileAppTeaserCard app={mobileApps[1]} />
           </div>
         </div>
       </section>
